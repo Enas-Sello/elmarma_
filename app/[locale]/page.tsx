@@ -12,7 +12,7 @@ async function Home({ params: { locale } }: { params: { locale: string } }) {
       namespaces={i18nNamespaces}
       locale={locale}
       resources={resources}>
-      <main className="w-full h-screen">
+      <main>
         <Hero />
       </main>
     </TranslationsProvider>

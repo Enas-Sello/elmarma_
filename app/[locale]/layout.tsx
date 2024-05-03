@@ -8,8 +8,7 @@ import { dir } from 'i18next';
 import Navbare from '@/components/Navbare';
 import Footer from '@/components/Footer';
 import Provider from '@/utils/reactQueryClient';
-// import { QueryClientProvider } from '@tanstack/react-query';
-// import { reactQueryClient } from '../../utils/reactQueryClient';
+import DarkModeProviders from '@/utils/darkModeProviders';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -30,14 +29,14 @@ function RootLayout({
   params: { locale: string };
 }) {
   return (
-    <html lang={locale} dir={dir(locale)}>
+    <html lang={locale} dir={dir(locale)} suppressHydrationWarning>
       <body className={inter.className}>
         <Provider>
-          <div>
+          <DarkModeProviders>
             <Navbare />
-            {children}
+            <div className="w-full h-screen">{children}</div>
             <Footer />
-          </div>
+          </DarkModeProviders>
         </Provider>
       </body>
     </html>

@@ -6,11 +6,12 @@
 import Image from 'next/image';
 import logo from '@/public/assets/logo.png';
 import LanguageChanger from './LanguageChanger';
+import ThemeSwitch from './ThemeSwitch';
 
 const NaveBar = () => {
   return (
     <div className="flex items-center justify-between p-5 border-b-2 h-20">
-      <div className=" w-20 h-20  lg:w-32 lg:h-32">
+      <div className="w-20 h-20  lg:w-32 lg:h-32">
         <Image
           alt="logo"
           src={logo}
@@ -21,6 +22,7 @@ const NaveBar = () => {
       <div className=" flex items-center  gap-5 lg:gap-10">
         {/* <Search /> */}
 
+        <ThemeSwitch />
         <LanguageChanger />
       </div>
     </div>
