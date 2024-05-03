@@ -18,8 +18,10 @@
         "name": "next"
       }
     ],
+    "baseUrl": "./", // Adjust if necessary
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "react-query": ["node_modules/react-query/dist/index.d.ts"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

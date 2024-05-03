@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 import i18nConfig from '@/i18nConfig';
 import { ChangeEvent } from 'react';
+// import { MdOutlineLanguage } from 'react-icons/md';
 
 export default function LanguageChanger() {
   const { i18n } = useTranslation();
@@ -37,9 +38,12 @@ export default function LanguageChanger() {
   };
 
   return (
-    <select onChange={handleChange} value={currentLocale}>
-      <option value="en">English</option>
-      <option value="ar">arabic</option>
-    </select>
+    <div>
+      {/* <MdOutlineLanguage className="group" /> */}
+      <select onChange={handleChange} value={currentLocale}>
+        <option value="en">English</option>
+        <option value="ar">arabic</option>
+      </select>
+    </div>
   );
 }

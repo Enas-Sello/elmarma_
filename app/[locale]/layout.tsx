@@ -3,7 +3,13 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ReactNode } from 'react';
+
 import { dir } from 'i18next';
+import Navbare from '@/components/Navbare';
+import Footer from '@/components/Footer';
+import Provider from '@/utils/reactQueryClient';
+// import { QueryClientProvider } from '@tanstack/react-query';
+// import { reactQueryClient } from '../../utils/reactQueryClient';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,7 +22,7 @@ export function generateStaticParams() {
   return i18nConfig.locales.map(locale => ({ locale }));
 }
 
-export default function RootLayout({
+function RootLayout({
   children,
   params: { locale }
 }: {
@@ -25,7 +31,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang={locale} dir={dir(locale)}>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Provider>
+          <div>
+            <Navbare />
+            {children}
+            <Footer />
+          </div>
+        </Provider>
+      </body>
     </html>
   );
 }
+
+export default RootLayout;

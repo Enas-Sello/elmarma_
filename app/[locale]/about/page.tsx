@@ -1,10 +1,9 @@
 import BackButton from './BackButton';
-import styles from '../page.module.css';
-import LanguageChanger from '@/components/LanguageChanger';
+// import LanguageChanger from '@/components/LanguageChanger';
 import TranslationsProvider from '@/components/TranslationsProvider';
 import initTranslations from '@/app/i18n';
 
-const i18nNamespaces = ['about', 'test'];
+const i18nNamespaces = ['about'];
 
 async function About({ params: { locale } }: { params: { locale: string } }) {
   const { t, resources } = await initTranslations(locale, i18nNamespaces);
@@ -14,10 +13,9 @@ async function About({ params: { locale } }: { params: { locale: string } }) {
       namespaces={i18nNamespaces}
       locale={locale}
       resources={resources}>
-      <main className={styles.main}>
+      <main>
         <h1>{t('about_header')}</h1>
         <BackButton />
-        <LanguageChanger />
       </main>
     </TranslationsProvider>
   );
