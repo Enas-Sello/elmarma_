@@ -1,7 +1,4 @@
 'use client';
-// import Cart from "./Cart"
-// import Links from "./Links"
-// import Search from "./Search"
 
 import Image from 'next/image';
 import logo from '@/public/assets/logo.png';

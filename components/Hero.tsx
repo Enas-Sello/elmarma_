@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <div>
       <h1>{t('header')}</h1>
-      <Link href="/hero">{t('page2')}</Link>
+      <Link href="/todos">{t('page2')}</Link>
     </div>
   );
 };

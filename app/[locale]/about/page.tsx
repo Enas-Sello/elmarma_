@@ -6,6 +6,7 @@ const i18nNamespaces = ['about'];
 
 async function About({ params: { locale } }: { params: { locale: string } }) {
   const { t, resources } = await initTranslations(locale, i18nNamespaces);
+ 
   return (
     <TranslationsProvider
       namespaces={i18nNamespaces}
