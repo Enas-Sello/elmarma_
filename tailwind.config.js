@@ -6,7 +6,15 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}'
   ],
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+        primary: {
+          500: '#624CF5',
+          50: ' #F6F8FD',
+          DEFAULT: '#624CF5',
+        }
+      }
+    }
   },
   plugins: [],
   darkMode: 'class'
