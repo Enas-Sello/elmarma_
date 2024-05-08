@@ -7,7 +7,7 @@ const Hero = () => {
  
   return (
     <div>
-      <h1>{t('header')}</h1>
+      <h1>{t('home')}</h1>
       <Link href="/todos">{t('page2')}</Link>
     </div>
   );

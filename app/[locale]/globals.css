@@ -13,3 +13,9 @@
   -moz-osx-font-smoothing: grayscale;
   text-transform: capitalize;
 }
+
+@layer base {
+  .link {
+    @apply   rounded-xl md:font-semibold transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-100;
+  }
+}

@@ -3,6 +3,7 @@ import { useFetch } from '@/utils/hooks/useQuery';
 import React from 'react';
 
 const TodoDetailes = ({ params: { id } }: any) => {
+  
   const {
     data: title,
     isLoading,

@@ -1,5 +1,5 @@
 import initTranslations from '@/app/i18n';
-import TranslationsProvider from '@/components/TranslationsProvider';
+import TranslationsProvider from '@/app/[locale]/components/TranslationsProvider';
 
 const ContactUs = async ({
   params: { locale }

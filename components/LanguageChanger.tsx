@@ -6,13 +6,11 @@ import { useTranslation } from 'react-i18next';
 import i18nConfig from '@/i18nConfig';
 import { ChangeEvent } from 'react';
 
-
 export default function LanguageChanger() {
   const { i18n } = useTranslation();
   const currentLocale = i18n.language;
   const router = useRouter();
   const currentPathname = usePathname();
-
 
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const newLocale = e.target.value;
@@ -40,9 +38,12 @@ export default function LanguageChanger() {
 
   return (
     <div>
-      <select onChange={handleChange} value={currentLocale}>
-        <option value="en">English</option>
-        <option value="ar">arabic</option>
+      <select
+        className="bg-transparent w-fit"
+        onChange={handleChange}
+        value={currentLocale}>
+        <option value="en">EN</option>
+        <option value="ar">AR</option>
       </select>
     </div>
   );

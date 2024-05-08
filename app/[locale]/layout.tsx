@@ -33,7 +33,8 @@ function RootLayout({
       <body className={inter.className}>
         <Provider>
           <DarkModeProviders>
-            <Navbare />
+            
+            <Navbare  />
             <div className="w-full h-screen">{children}</div>
             <Footer />
           </DarkModeProviders>

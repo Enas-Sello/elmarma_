@@ -1,5 +1,5 @@
 import initTranslations from '@/app/i18n';
-import TranslationsProvider from '@/components/TranslationsProvider';
+import TranslationsProvider from '@/app/[locale]/components/TranslationsProvider';
 
 const Shop = async ({ params: { locale } }: { params: { locale: string } }) => {
   const i18nNamespaces = ['shop'];

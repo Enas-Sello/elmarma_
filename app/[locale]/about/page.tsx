@@ -1,4 +1,3 @@
-import BackButton from '../../../components/BackButton';
 import TranslationsProvider from '@/components/TranslationsProvider';
 import initTranslations from '@/app/i18n';
 
@@ -14,7 +13,6 @@ async function About({ params: { locale } }: { params: { locale: string } }) {
       resources={resources}>
       <main>
         <h1>{t('about_header')}</h1>
-        <BackButton />
       </main>
     </TranslationsProvider>
   );

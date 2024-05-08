@@ -1,3 +1,10 @@
 {
-  "header": "hero"
+  "home": "Home",
+  "Matches": "Matches",
+  "News": "News",
+  "Leagues": "Leagues",
+  "Elmarma Media": "Elmarma Media",
+  "Latest Transfers": "Latest Transfers",
+  "other sports": " other sports ",
+  "search": "search"
 }
