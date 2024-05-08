@@ -9,6 +9,8 @@ import Navbare from '@/components/Navbare';
 import Footer from '@/components/Footer';
 import Provider from '@/utils/reactQueryClient';
 import DarkModeProviders from '@/utils/darkModeProviders';
+import TranslationsProvider from '@/components/TranslationsProvider';
+import initTranslations from '../i18n';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,24 +23,32 @@ export function generateStaticParams() {
   return i18nConfig.locales.map(locale => ({ locale }));
 }
 
-function RootLayout({
+async function RootLayout({
   children,
   params: { locale }
 }: {
   children: ReactNode;
   params: { locale: string };
 }) {
+  const i18nNamespaces = ['home'];
+
+  const { resources } = await initTranslations(locale, i18nNamespaces);
+
   return (
     <html lang={locale} dir={dir(locale)} suppressHydrationWarning>
       <body className={inter.className}>
-        <Provider>
-          <DarkModeProviders>
-            
-            <Navbare  />
-            <div className="w-full h-screen">{children}</div>
-            <Footer />
-          </DarkModeProviders>
-        </Provider>
+        <TranslationsProvider
+          namespaces={i18nNamespaces}
+          locale={locale}
+          resources={resources}>
+          <Provider>
+            <DarkModeProviders>
+              <Navbare />
+              <div className="w-full h-screen">{children}</div>
+              <Footer />
+            </DarkModeProviders>
+          </Provider>
+        </TranslationsProvider>
       </body>
     </html>
   );
