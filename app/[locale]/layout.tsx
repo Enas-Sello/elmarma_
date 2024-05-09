@@ -11,8 +11,9 @@ import Provider from '@/utils/reactQueryClient';
 import DarkModeProviders from '@/utils/darkModeProviders';
 import TranslationsProvider from '@/components/TranslationsProvider';
 import initTranslations from '../i18n';
+import { cn } from '@/lib/utils';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -22,7 +23,6 @@ export const metadata: Metadata = {
 export function generateStaticParams() {
   return i18nConfig.locales.map(locale => ({ locale }));
 }
-
 async function RootLayout({
   children,
   params: { locale }
@@ -36,7 +36,12 @@ async function RootLayout({
 
   return (
     <html lang={locale} dir={dir(locale)} suppressHydrationWarning>
-      <body className={inter.className}>
+      <body
+        className={cn(
+          'min-h-screen bg-background font-sans antialiased',
+          inter.variable
+        )}>
+        {' '}
         <TranslationsProvider
           namespaces={i18nNamespaces}
           locale={locale}

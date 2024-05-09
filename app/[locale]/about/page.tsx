@@ -1,20 +1,12 @@
-import TranslationsProvider from '@/components/TranslationsProvider';
-import initTranslations from '@/app/i18n';
+'use client';
+import { useTranslation } from 'react-i18next';
 
-const i18nNamespaces = ['about'];
-
-async function About({ params: { locale } }: { params: { locale: string } }) {
-  const { t, resources } = await initTranslations(locale, i18nNamespaces);
-
+function About({ params: { locale } }: { params: { locale: string } }) {
+  const { t } = useTranslation();
   return (
-    <TranslationsProvider
-      namespaces={i18nNamespaces}
-      locale={locale}
-      resources={resources}>
-      <main>
-        <h1>{t('about_header')}</h1>
-      </main>
-    </TranslationsProvider>
+    <main>
+      <h1>{t('home')}</h1>
+    </main>
   );
 }
 

@@ -1,21 +1,11 @@
 import Hero from '@/components/Hero';
-import initTranslations from '../i18n';
-import TranslationsProvider from '@/components/TranslationsProvider';
 
-const i18nNamespaces = ['home'];
 
-async function Home({ params: { locale } }: { params: { locale: string } }) {
-  const { resources } = await initTranslations(locale, i18nNamespaces);
-
+async function Home() {
   return (
-    <TranslationsProvider
-      namespaces={i18nNamespaces}
-      locale={locale}
-      resources={resources}>
-      <main>
-        <Hero />
-      </main>
-    </TranslationsProvider>
+    <main>
+      <Hero />
+    </main>
   );
 }
 

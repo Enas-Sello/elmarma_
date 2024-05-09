@@ -1,5 +1,6 @@
 import { APILINK } from '@/config';
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
+import i18next from 'i18next';
 
 const baseURL = APILINK || '';
 
@@ -11,6 +12,7 @@ export const apiRequest = async <T>(
   options: AxiosRequestConfig,
   pagination?: boolean
 ): Promise<T> => {
+  const currentLanguage = await i18next?.logger?.options?.lng;
   const onSuccess = (response: AxiosResponse) => {
     if (pagination) {
       return response.data;
@@ -24,7 +26,7 @@ export const apiRequest = async <T>(
       timeout: 5000,
       headers: {
         'Content-Type': `application/json`,
-        // 'Accept-Language': currentLanguage,
+        'Accept-Language': currentLanguage || 'ar',
         ...options.headers
       }
     });

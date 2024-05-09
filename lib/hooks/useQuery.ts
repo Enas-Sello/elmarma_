@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { AxiosRequestConfig } from 'axios';
-import { apiRequest } from './apiRequest';
+import { apiRequest } from '../apiRequest';
 
 type AxiosRequestConfig_withoutURL_TP = Omit<AxiosRequestConfig, 'url'>;
 type Args_TP<T> = {

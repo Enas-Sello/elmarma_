@@ -22,6 +22,7 @@ export default function LanguageChanger() {
     document.cookie = `NEXT_LOCALE=${newLocale};expires=${date.toUTCString()};path=/`;
 
     // redirect to the new locale path
+
     if (
       currentLocale === i18nConfig.defaultLocale &&
       !i18nConfig.prefixDefault
