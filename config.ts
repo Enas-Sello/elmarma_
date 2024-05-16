@@ -2,4 +2,5 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export const APILINK =
-  process.env.NEXT_PUBLIC_API_URL || 'https://jsonplaceholder.typicode.com';
+  process.env.NEXT_PUBLIC_API_URL || 'https://admin.elmarma.com/api/v1/';
+// process.env.NEXT_PUBLIC_API_URL || 'https://jsonplaceholder.typicode.com';

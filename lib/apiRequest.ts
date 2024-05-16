@@ -16,9 +16,9 @@ export const apiRequest = async <T>(
   const currentLanguage = await i18next?.logger?.options?.lng;
   const onSuccess = (response: AxiosResponse) => {
     if (pagination) {
-      return response.data;
+      return response.data.data;
     } else {
-      return response.data;
+      return response.data.data;
     }
   };
   try {
