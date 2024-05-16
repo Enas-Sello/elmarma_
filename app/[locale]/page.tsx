@@ -1,10 +1,12 @@
-import Hero from '@/components/Hero';
-
+import Card from '@/components/Card';
 
 async function Home() {
   return (
-    <main>
-      <Hero />
+    <main className="grid grid-cols-4 gap-5 p-20 justify-center items-center 
+     bg-mainWhite">
+      <Card type="test" />
+      <Card type="test2" />
+      <Card />
     </main>
   );
 }

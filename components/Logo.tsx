@@ -10,7 +10,7 @@ const Logo = () => {
         alt="logo"
         src={logo}
         placeholder="empty"
-        className=" object-contain w-full h-full"
+        className=" object-cover w-full h-full"
       />
     </Link>
   );

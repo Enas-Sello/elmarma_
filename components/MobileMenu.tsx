@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 const MobileMenu = () => {
@@ -19,8 +19,8 @@ const MobileMenu = () => {
   ];
   return (
     <>
-      <div className="md:hidden z-20" onClick={clickHandler}>
-        {!nav ? <FaBars /> : <FaTimes />}
+      <div className="z-20 bg-primary h-full p-2 w-14 flex justify-center items-center" onClick={clickHandler}>
+        {!nav ? <FaBars size={26} color='white'  /> : <FaTimes />}
       </div>
       <ul
         className={

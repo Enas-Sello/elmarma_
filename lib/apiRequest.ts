@@ -12,6 +12,7 @@ export const apiRequest = async <T>(
   options: AxiosRequestConfig,
   pagination?: boolean
 ): Promise<T> => {
+  //@ts-ignore
   const currentLanguage = await i18next?.logger?.options?.lng;
   const onSuccess = (response: AxiosResponse) => {
     if (pagination) {

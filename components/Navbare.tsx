@@ -9,16 +9,18 @@ import ThemeSwitch from './ThemeSwitch';
 
 const NaveBar = () => {
   return (
-    <div className="flex items-center justify-between  p-5 border-b-2 h-20">
-      <div className="w-20 h-20 lg:w-32 lg:h-32">
-        <Logo />
-      </div>
-      <Links />
-      <div className="flex items-center  gap-2 md:gap-8">
+    <div className="flex items-center  h-[4.5rem]">
+      <MobileMenu />
+      <div className="flex items-center w-full justify-around gap-5">
+        <div className="w-8 h-8 md:w-16 md:h-16">
+          <Logo />
+        </div>
         <Search />
-        <ThemeSwitch />
-        <LanguageChanger />
-        <MobileMenu />
+        <Links />
+        <div className="flex items-center  gap-2 md:gap-8">
+          <ThemeSwitch />
+          <LanguageChanger />
+        </div>
       </div>
     </div>
   );
