@@ -41,7 +41,6 @@ async function RootLayout({
           'min-h-screen bg-background font-sans antialiased',
           inter.variable
         )}>
-        {' '}
         <TranslationsProvider
           namespaces={i18nNamespaces}
           locale={locale}
@@ -49,8 +48,10 @@ async function RootLayout({
           <Provider>
             <DarkModeProviders>
               <Navbare />
-              <div className="w-full h-screen">{children}</div>
-              <Footer />
+              <div className="px-20">
+                <div className="w-full h-screen">{children}</div>
+                <Footer />
+              </div>
             </DarkModeProviders>
           </Provider>
         </TranslationsProvider>

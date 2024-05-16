@@ -79,8 +79,11 @@
     body {
       @apply bg-background text-foreground;
     } */
+
+  .rounded {
+    @apply rounded-lg;
+  }
   .shadow {
-    box-shadow:27px -27px 53px #0e0e0e,
-    -27px 27px 53px #363636;
+    box-shadow: 27px -27px 53px #0e0e0e, -27px 27px 53px #363636;
   }
 }
