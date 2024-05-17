@@ -35,10 +35,10 @@ const SharedLine = ({
         />
       </div>
 
-      <div className="flex items-center justify-center gap-3">
-        <Link href={link}>{t(taill)}</Link>
+      <Link href={link} className="flex items-center justify-center gap-3">
+        {t(taill)}
         {currentLocale === 'en' ? <IoIosArrowForward /> : <IoIosArrowBack />}
-      </div>
+      </Link>
     </div>
   );
 };
