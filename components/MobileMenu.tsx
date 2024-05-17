@@ -1,59 +1,52 @@
 'use client';
 import Link from 'next/link';
-import React, { useState } from 'react';
-// import { useTranslation } from 'react-i18next';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
+import { FaBars } from 'react-icons/fa';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Separator } from '@radix-ui/react-separator';
 
 const MobileMenu = () => {
-  const [nav, setNave] = useState(false);
-  const clickHandler = () => {
-    setNave(!nav);
-  };
+  const { t } = useTranslation();
 
   const menuLinks = [
     'Matches',
     'News',
     'Leagues',
     'Elmarma Media',
-    'Latest Transfers'
+    'Latest Transfers',
+    'Latest Transfers',
+    'Latest Transfers',
+    'Leagues'
   ];
   return (
-    <>
-      <div className="z-20 bg-primary h-full p-2 w-14 flex justify-center items-center" onClick={clickHandler}>
-        {!nav ? <FaBars size={26} color='white'  /> : <FaTimes />}
-      </div>
-      <ul
-        className={
-          !nav
-            ? 'hidden'
-            : 'absolute z-10 bg-[#18003ebf] bg-opacity-70 font-bold top-0 left-0 w-full  h-screen flex flex-col justify-center items-center cursor-pointer	'
-        }>
-        {menuLinks.map((link: string) => (
-          <li key={link} className=" py-6 text-4xl">
-            <Link onClick={clickHandler} href="/">
-              {link}
-            </Link>
-          </li>
-        ))}
-
-        {/* <div className="flex gap-3 items-center justify-center">
-          <li>
-            <AiFillGithub
-              onClick={() => window.open(PrfileLinks.Github, '_blank')}
-              className="w-6 h-6"
-            />
-          </li>
-          <li>
-            <AiOutlineLinkedin
-              onClick={() => window.open(PrfileLinks.Linkedin, '_blank')}
-              className="w-6 h-6"
-            />
-          </li>
-        </div> */}
-
-        {/* <Button /> */}
-      </ul>
-    </>
+    <Sheet>
+      <SheetTrigger className=" align-middle bg-primary h-full   w-16 flex justify-center items-center">
+        <FaBars className="w-7 h-7 " />
+      </SheetTrigger>
+      <SheetContent className="flex bg-primary ">
+        <div className="flex flex-col gap-5 mt-10">
+          {menuLinks.map((link: string) => (
+            <>
+              <div className="link  text-lg text-white">
+                <Link href="/">{t(link)}</Link>
+              </div>
+              <Separator className="border  border-mainWhite border-opacity-45" />
+            </>
+          ))}
+        </div>
+        {/*  */}
+        <div className="flex-1 flex flex-col gap-5  bg-mainWhite">
+          {menuLinks.map((link: string) => (
+            <>
+              <div className="link  text-lg ">
+                <Link href="/">{t(link)}</Link>
+              </div>
+              <Separator className="border  border-mainWhite border-opacity-45" />
+            </>
+          ))}
+        </div>
+      </SheetContent>
+    </Sheet>
   );
 };
 

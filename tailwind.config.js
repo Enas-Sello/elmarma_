@@ -9,9 +9,9 @@ module.exports = {
     extend: {
       colors: {
         primary: '#194229',
-        mainDark:'#222222',
-        mainWhite:'#d6d6d6',
-        mainGray:'#B0B0B0',
+        mainDark: '#222222',
+        mainWhite: '#EDF0F3',
+        mainGray: '#B0B0B0'
       }
     },
     plugins: [],

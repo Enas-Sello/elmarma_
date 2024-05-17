@@ -38,7 +38,7 @@ async function RootLayout({
     <html lang={locale} dir={dir(locale)} suppressHydrationWarning>
       <body
         className={cn(
-          'min-h-screen bg-background font-sans antialiased',
+          ' bg-background font-sans antialiased',
           inter.variable
         )}>
         <TranslationsProvider
@@ -48,8 +48,10 @@ async function RootLayout({
           <Provider>
             <DarkModeProviders>
               <Navbare />
-              <div className="px-20">
-                <div className="w-full h-screen">{children}</div>
+              <div className="px-16">
+                <div className=" bg-mainWhite">{children}</div>
+              </div>
+              <div className="px-16">
                 <Footer />
               </div>
             </DarkModeProviders>

@@ -15,64 +15,62 @@ import { useTranslation } from 'react-i18next';
 const Social = () => {
   const { t } = useTranslation();
 
-  const { data, isError, isLoading, isFetching, error } = useFetch<any>({
+  const { data, isError, isLoading, error } = useFetch<any>({
     queryKey: [`social`],
     endpoint: 'setting'
   });
 
   const socilaMedia = [
     {
-      icon: <FaYoutube size={24} className=" hover:" />,
+      icon: <FaYoutube size={24} className=" hover:text-red-500" />,
       link: data?.skype_link
     },
     {
-      icon: <FaLinkedin size={24} className=" hover:" />,
+      icon: <FaLinkedin  size={24} className=" hover:text-blue-600" />,
       link: data?.linkedin_link
     },
     {
-      icon: <FaInstagram size={24} className=" hover:" />,
+      icon: <FaInstagram    size={24} className=" hover:text-violet-500" />,
       link: data?.inst_link
     },
     {
-      icon: <FaFacebook size={24} className=" hover:" />,
+      icon: <FaFacebook size={24} className=" hover:text-blue-800" />,
       link: data?.fb_link
     },
     {
-      icon: <FaTwitter size={24} className=" hover:" />,
+      icon: <FaTwitter size={24} className=" hover:text-sky-600" />,
       link: data?.tw_link
     }
   ];
 
-  {
-    isLoading || (isFetching && <Spiner />);
-  }
-  {
-    isError && <p>{error?.message}</p>;
-  }
   return (
     <>
-      {data && (
-        <div className="flex justify-between items-center w-full">
-          <div className=" flex gap-2">
-            <Link className="link" href={''}>
-              {t('Policies')}
-            </Link>
-            <Link className="link" href={data?.whatsapp_link}>
-              {t('Call us')}
-            </Link>
-          </div>
-          <div className="flex  gap-2 lg:gap-10">
-            {socilaMedia?.map((item, i) => (
-              <Link key={i} className="link " href={item.link}>
-                {item.icon}
-              </Link>
-            ))}
-          </div>
-          <div className=" flex gap-2">
-            <p className="text-mainGray">{t('All rights reserved © 2024')}</p>
-          </div>
+      <div className="flex justify-between items-center w-full">
+        <div className=" flex gap-2">
+          <Link className="link" href={''}>
+            {t('policies')}
+          </Link>
+          <Link className="link" href={data ? data?.whatsapp_link : ''}>
+            {t('call us')}
+          </Link>
         </div>
-      )}
+        <div className="flex  gap-2 lg:gap-10">
+          {isLoading && <Spiner />}
+          {isError && <p>{error?.message}</p>}
+          {data && (
+            <>
+              {socilaMedia?.map((item, i) => (
+                <Link target='_blank' key={i} className="link " href={item.link}>
+                  {item.icon}
+                </Link>
+              ))}
+            </>
+          )}
+        </div>
+        <div className=" flex gap-2">
+          <p className="text-mainGray">{t('All rights reserved © 2024')}</p>
+        </div>
+      </div>
     </>
   );
 };
