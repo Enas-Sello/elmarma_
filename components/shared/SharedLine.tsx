@@ -9,13 +9,15 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 const SharedLine = ({
   LineColor,
   header,
-  taill,
-  link
+  tail,
+  link,
+  icon
 }: {
   LineColor?: string | 'bg-mainDark';
   header: string;
-  link: string;
-  taill: string;
+  link?: string;
+  tail?: string;
+  icon?: boolean;
 }) => {
   const { t, i18n } = useTranslation();
   const currentLocale = i18n.language;
@@ -25,20 +27,23 @@ const SharedLine = ({
        ${LineColor ? `${LineColor} ` : 'bg-mainDark '}`}>
       <div className="flex items-center justify-center gap-2">
         <p>{t(header)}</p>
-        <Image
-          src={fire}
-          alt="fire"
-          width={25}
-          height={25}
-          priority={true}
-          className=" object-contain"
-        />
+        {icon && (
+          <Image
+            src={fire}
+            alt="fire"
+            width={25}
+            height={25}
+            priority={true}
+            className=" object-contain"
+          />
+        )}
       </div>
-
-      <Link href={link} className="flex items-center justify-center gap-3">
-        {t(taill)}
-        {currentLocale === 'en' ? <IoIosArrowForward /> : <IoIosArrowBack />}
-      </Link>
+      {tail && link && (
+        <Link href={link} className="flex items-center justify-center gap-3">
+          {t(tail)}
+          {currentLocale === 'en' ? <IoIosArrowForward /> : <IoIosArrowBack />}
+        </Link>
+      )}
     </div>
   );
 };

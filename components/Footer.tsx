@@ -1,6 +1,6 @@
 import Logo from './Logo';
 import Links from './Links';
-import Social from './Social';
+// import Social from './Social';
 import { Separator } from '@/components/ui/separator';
 
 const Footer = () => {
@@ -13,7 +13,7 @@ const Footer = () => {
           </div>
           <Links />
           <Separator className=" border  border-mainGray" />
-          <Social />
+          {/* <Social /> */}
         </div>
       </div>
     </>

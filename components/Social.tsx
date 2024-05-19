@@ -1,7 +1,7 @@
 'use client';
 import { useFetch } from '@/lib/hooks/useQuery';
 import React from 'react';
-import Spiner from './Spiner';
+import Spiner from './Spinner';
 import {
   FaTwitter,
   FaFacebook,
@@ -20,7 +20,7 @@ const Social = () => {
     endpoint: 'setting'
   });
 
-  const socilaMedia = [
+  const socialMedia = [
     {
       icon: <FaYoutube size={24} className=" hover:text-red-500" />,
       link: data?.skype_link
@@ -59,8 +59,12 @@ const Social = () => {
           {isError && <p>{error?.message}</p>}
           {data && (
             <>
-              {socilaMedia?.map((item, i) => (
-                <Link target='_blank' key={i} className="link " href={item.link}>
+              {socialMedia?.map((item, i) => (
+                <Link
+                  target="_blank"
+                  key={i}
+                  className="link "
+                  href={item.link}>
                   {item.icon}
                 </Link>
               ))}

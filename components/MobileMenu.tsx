@@ -20,8 +20,8 @@ const MobileMenu = () => {
   ];
   return (
     <Sheet>
-      <SheetTrigger className=" align-middle bg-primary h-full   w-16 flex justify-center items-center">
-        <FaBars className="w-7 h-7 " />
+      <SheetTrigger className=" align-middle bg-primary h-full w-10  md:w-[3.7rem] flex justify-center items-center">
+        <FaBars className="w-5 h-5 md:w-7 md:h-7 " />
       </SheetTrigger>
       <SheetContent className="flex bg-primary ">
         <div className="flex flex-col gap-5 mt-10">

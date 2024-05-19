@@ -5,10 +5,10 @@ import { Inter } from 'next/font/google';
 import { ReactNode } from 'react';
 
 import { dir } from 'i18next';
-import Navbare from '@/components/Navbare';
+import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import Provider from '@/utils/reactQueryClient';
-import DarkModeProviders from '@/utils/darkModeProviders';
+import Provider from '@/lib/utils/reactQueryClient';
+import DarkModeProviders from '@/lib/utils/darkModeProviders';
 import TranslationsProvider from '@/components/TranslationsProvider';
 import initTranslations from '../i18n';
 import { cn } from '@/lib/utils';
@@ -37,19 +37,16 @@ async function RootLayout({
   return (
     <html lang={locale} dir={dir(locale)} suppressHydrationWarning>
       <body
-        className={cn(
-          ' bg-background font-sans antialiased',
-          inter.variable
-        )}>
+        className={cn(' bg-background font-sans antialiased', inter.variable)}>
         <TranslationsProvider
           namespaces={i18nNamespaces}
           locale={locale}
           resources={resources}>
           <Provider>
             <DarkModeProviders>
-              <Navbare />
+              <Navbar />
               <div className="px-16">
-                <div className=" bg-mainWhite">{children}</div>
+                <div className="min-h-screen bg-mainWhite text-mainDark">{children}</div>
               </div>
               <div className="px-16">
                 <Footer />
