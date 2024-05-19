@@ -1,7 +1,7 @@
 import { Link } from 'lucide-react';
 import React from 'react';
 
-const LeaguesCard = ({ leagues }: any[]) => {
+const LeaguesCard = ({ leagues }: any) => {
   console.log(leagues);
   return (
     <>
