@@ -11,12 +11,14 @@ const SharedLine = ({
   header,
   tail,
   link,
-  icon
+  icon,
+  logo
 }: {
   LineColor?: string | 'bg-mainDark';
   header: string;
   link?: string;
   tail?: string;
+  logo?: any;
   icon?: boolean;
 }) => {
   const { t, i18n } = useTranslation();
@@ -26,6 +28,16 @@ const SharedLine = ({
       className={`flex justify-between items-center py-1 px-3 rounded text-mainWhite font-bold
        ${LineColor ? `${LineColor} ` : 'bg-mainDark '}`}>
       <div className="flex items-center justify-center gap-2">
+        {logo && (
+          <Image
+            src={logo}
+            alt="fire"
+            width={25}
+            height={25}
+            priority={true}
+            className=" object-contain p-0 m-0"
+          />
+        )}
         <p>{t(header)}</p>
         {icon && (
           <Image

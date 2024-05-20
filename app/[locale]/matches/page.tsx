@@ -1,22 +1,30 @@
-import initTranslations from '@/app/i18n';
-import TranslationsProvider from '@/components/TranslationsProvider';
+import LeaguesMatches from '@/components/LeaguesMatches';
+import MainLayout from '@/components/shared/MainLayout';
+import SharedLine from '@/components/shared/SharedLine';
+import SwipeComponents from '@/components/shared/SwipeComponents';
+import logotest from '@/public/assets/logotest.png';
 
-const Matches = async ({
-  params: { locale }
-}: {
-  params: { locale: string };
-}) => {
-  const i18nNamespaces = ['matches'];
-
-  const { t, resources } = await initTranslations(locale, i18nNamespaces);
-
+const Matches = async () => {
+  const matches = [
+    { team: { name: 'La Liga', logo: logotest }, match: [{}, {}, {}, {}] }
+  ];
   return (
-    <TranslationsProvider
-      namespaces={i18nNamespaces}
-      locale={locale}
-      resources={resources}>
-      <h1>{t('header')}</h1>{' '}
-    </TranslationsProvider>
+    <main className="p-10">
+      <MainLayout>
+        <SwipeComponents />
+        {matches.map(item => (
+          <>
+            <SharedLine
+              header={item.team.name}
+              LineColor="bg-primary"
+              logo={item.team.logo}
+            />
+            <LeaguesMatches />
+          </>
+        ))}
+        <></>
+      </MainLayout>
+    </main>
   );
 };
 

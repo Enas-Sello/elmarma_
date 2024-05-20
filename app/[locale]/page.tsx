@@ -4,11 +4,10 @@ import Card from '@/components/shared/Card';
 import MainLayout from '@/components/shared/MainLayout';
 import SharedLine from '@/components/shared/SharedLine';
 import { useFetch } from '@/lib/hooks/useQuery';
-import Image from 'next/image';
-import addN1 from '@/public/assets/add(1).png';
-import Link from 'next/link';
-import { Badge } from '@/components/ui/badge';
 import Hero from '@/components/Hero';
+import Advertisements from '@/components/Advertisements';
+import addN1 from '@/public/assets/add(1).png';
+
 const Home = () => {
   // news
   const {
@@ -38,20 +37,7 @@ const Home = () => {
         <section>slider</section>
         <Hero />
         {/* advertisement */}
-        <section>
-          <Link href={'/'} className="w-full h-full relative ">
-            <div className="absolute top-2 right-2">
-              <Badge variant={'secondary'}>{`>`}</Badge>
-            </div>
-            <Image
-              src={addN1}
-              priority={true}
-              alt="addN1"
-              placeholder="blur"
-              className=" object-cover w-full h-full"
-            />
-          </Link>
-        </section>
+        <Advertisements img={addN1} link={'/'} />
         {/* trending */}
         <MainLayout>
           <SharedLine header="Trending News" tail="more" link="/news" icon />
