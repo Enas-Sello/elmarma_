@@ -1,22 +1,17 @@
-import initTranslations from '@/app/i18n';
-import TranslationsProvider from '@/components/TranslationsProvider';
+import Advertisements from '@/components/Advertisements';
+import MainLayout from '@/components/shared/MainLayout';
+import SwipeComponents from '@/components/shared/SwipeComponents';
+import addN2 from '@/public/assets/add(2).png';
 
-const Media = async ({
-  params: { locale }
-}: {
-  params: { locale: string };
-}) => {
-  const i18nNamespaces = ['media'];
-
-  const { t, resources } = await initTranslations(locale, i18nNamespaces);
-
+const Media = async () => {
   return (
-    <TranslationsProvider
-      namespaces={i18nNamespaces}
-      locale={locale}
-      resources={resources}>
-      <h1>{t('header')}</h1>{' '}
-    </TranslationsProvider>
+    <main className=" p-10 ">
+      <MainLayout>
+        <section>slider</section>
+        {/* <SwipeComponents /> */}
+        <Advertisements img={addN2} link={'/'} />
+      </MainLayout>
+    </main>
   );
 };
 

@@ -6,7 +6,7 @@ import logotest from '@/public/assets/logotest.png';
 
 const Matches = async () => {
   const matches = [
-    { team: { name: 'La Liga', logo: logotest }, match: [{}, {}, {}, {}] }
+    { team: { name: 'La Liga', logo: logotest }, match: [{}, {}] }
   ];
   return (
     <main className="p-10">
@@ -19,10 +19,19 @@ const Matches = async () => {
               LineColor="bg-primary"
               logo={item.team.logo}
             />
-            <LeaguesMatches />
+            <LeaguesMatches data={item.match} />
           </>
         ))}
-        <></>
+        {matches.map(item => (
+          <>
+            <SharedLine
+              header={item.team.name}
+              LineColor="bg-primary"
+              logo={item.team.logo}
+            />
+            <LeaguesMatches data={item.match} />
+          </>
+        ))}
       </MainLayout>
     </main>
   );

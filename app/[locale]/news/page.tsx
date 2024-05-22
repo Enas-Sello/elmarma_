@@ -1,18 +1,36 @@
-import initTranslations from '@/app/i18n';
-import TranslationsProvider from '@/components/TranslationsProvider';
+'use client';
+import Advertisements from '@/components/Advertisements';
+import Card from '@/components/shared/Card';
+import MainLayout from '@/components/shared/MainLayout';
+import SharedLine from '@/components/shared/SharedLine';
+import SwipeComponents from '@/components/shared/SwipeComponents';
+import { Button } from '@/components/ui/button';
+import { useTranslation } from 'react-i18next';
+import addN2 from '@/public/assets/add(2).png';
 
-const News = async ({ params: { locale } }: { params: { locale: string } }) => {
-  const i18nNamespaces = ['news'];
-
-  const { t, resources } = await initTranslations(locale, i18nNamespaces);
+const News = () => {
+  const { t } = useTranslation();
 
   return (
-    <TranslationsProvider
-      namespaces={i18nNamespaces}
-      locale={locale}
-      resources={resources}>
-      <h1>{t('header')}</h1>{' '}
-    </TranslationsProvider>
+    <main className="p-10">
+      <MainLayout>
+        <SwipeComponents />
+        <SharedLine header="news" />
+        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          {
+            // news &&
+            <Card footer bgColor="bg-mainDark" data={[{}, {}, {}, {}, {}]} />
+          }
+        </div>
+        <div className="flex justify-center items-center ">
+          <Button size={'lg'} variant={'destructive'}>
+            {' '}
+            {t(' see more')}
+          </Button>
+        </div>
+        <Advertisements img={addN2} link={'/'} />
+      </MainLayout>
+    </main>
   );
 };
 

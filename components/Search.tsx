@@ -5,7 +5,7 @@ const Search = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="p-[.35rem] w-20  lg:w-fit rounded-lg border">
+    <div className="hidden lg:block p-[.35rem] w-20  lg:w-fit rounded-lg border">
       <input
         type="text"
         name="search"

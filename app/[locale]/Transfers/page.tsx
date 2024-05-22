@@ -1,22 +1,17 @@
-import initTranslations from '@/app/i18n';
-import TranslationsProvider from '@/components/TranslationsProvider';
+import MainLayout from '@/components/shared/MainLayout';
+import Table from '@/components/shared/Table';
 
 const Transfers = async ({
   params: { locale }
 }: {
   params: { locale: string };
 }) => {
-  const i18nNamespaces = ['transfers'];
-
-  const { t, resources } = await initTranslations(locale, i18nNamespaces);
-
   return (
-    <TranslationsProvider
-      namespaces={i18nNamespaces}
-      locale={locale}
-      resources={resources}>
-      <h1>{t('header')}</h1>{' '}
-    </TranslationsProvider>
+    <MainLayout>
+      <main>
+        <Table />
+      </main>
+    </MainLayout>
   );
 };
 
