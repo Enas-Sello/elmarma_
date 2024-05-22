@@ -7,6 +7,13 @@ import { Separator } from '@radix-ui/react-separator';
 
 const MobileMenu = () => {
   const { t } = useTranslation();
+  const navLinks = [
+    { name: 'Matches', link: 'matches' },
+    { name: 'News', link: 'news' },
+    { name: 'Leagues', link: 'leagues' },
+    { name: 'Elmarma Media', link: 'media' },
+    { name: 'Latest Transfers', link: 'transfers' }
+  ];
 
   const menuLinks = [
     'Matches',
@@ -18,6 +25,7 @@ const MobileMenu = () => {
     'Latest Transfers',
     'Leagues'
   ];
+  
   return (
     <Sheet>
       <SheetTrigger className=" align-middle bg-primary h-full w-10  md:w-[3.7rem] flex justify-center items-center">
@@ -36,10 +44,10 @@ const MobileMenu = () => {
         </div>
         {/*  */}
         <div className="flex-1 flex flex-col gap-5  bg-mainWhite">
-          {menuLinks.map((link: string) => (
+          {navLinks.map(link => (
             <>
               <div className="link  text-lg ">
-                <Link href="/">{t(link)}</Link>
+                <Link href={link.link}>{t(link.name)}</Link>
               </div>
               <Separator className="border  border-mainWhite border-opacity-45" />
             </>

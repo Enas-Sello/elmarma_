@@ -18,13 +18,13 @@ const Links = () => {
   const active = path[path.length - 1];
   console.log(active);
   return (
-    <div className="hidden md:flex  gap-3 lg:gap-10">
+    <div className=" md:flex  gap-3 lg:gap-10">
       {navLinks.map((item: any) => (
         <Link
           key={item.link}
           className={`${
             active === item.link && 'underline-offset-4 underline'
-          } link sm:hidden md:block sm:text-sm sm:font-normal lg:text-lg hover:underline `}
+          } link  sm:text-sm sm:font-normal lg:text-lg hover:underline `}
           href={item.link}>
           {t(item.name)}
         </Link>

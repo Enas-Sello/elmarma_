@@ -12,11 +12,13 @@ const Navbar = () => {
     <div className=" flex items-center  h-[4.5rem] bg-mainDark text-white font-medium">
       <MobileMenu />
       <div className="flex items-center w-full justify-around gap-3 lg:gap-5">
-        <div className="w-8 h-8 md:w-16 md:h-16">
+        <div className="w-16 h-16">
           <Logo />
         </div>
         <Search />
-        <Links />
+        <div className="hidden md:block">
+          <Links />
+        </div>
         <div className="flex items-center  gap-2 lg:gap-8">
           <ThemeSwitch />
           <LanguageChanger />
