@@ -1,7 +1,7 @@
 import LeaguesMatches from '@/components/LeaguesMatches';
 import MainLayout from '@/components/shared/MainLayout';
 import SharedLine from '@/components/shared/SharedLine';
-import SwipeComponents from '@/components/shared/SwipeComponents';
+// import SwipeComponents from '@/components/shared/SwipeComponents';
 import logotest from '@/public/assets/logotest.png';
 
 const Matches = async () => {
@@ -11,7 +11,7 @@ const Matches = async () => {
   return (
     <main className="p-10">
       <MainLayout>
-        <SwipeComponents />
+        {/* <SwipeComponents /> */}
         {matches.map(item => (
           <>
             <SharedLine

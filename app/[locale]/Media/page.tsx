@@ -1,6 +1,6 @@
 import Advertisements from '@/components/Advertisements';
 import MainLayout from '@/components/shared/MainLayout';
-import SwipeComponents from '@/components/shared/SwipeComponents';
+// import SwipeComponents from '@/components/shared/SwipeComponents';
 import addN2 from '@/public/assets/add(2).png';
 
 const Media = async () => {

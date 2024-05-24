@@ -74,6 +74,7 @@ const columns = [
   })
 ];
 const Table = () => {
+  // eslint-disable-next-line no-unused-vars
   const [data, _setData] = React.useState(() => [...defaultData]);
   const rerender = React.useReducer(() => ({}), {})[1];
 

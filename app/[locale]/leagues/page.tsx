@@ -3,7 +3,7 @@ import LeaguesCard from '@/components/LeaguesCard';
 import Card from '@/components/shared/Card';
 import MainLayout from '@/components/shared/MainLayout';
 import SharedLine from '@/components/shared/SharedLine';
-import SwipeComponents from '@/components/shared/SwipeComponents';
+// import SwipeComponents from '@/components/shared/SwipeComponents';
 import addN2 from '@/public/assets/add(2).png';
 
 const Leagues = async () => {
@@ -11,7 +11,7 @@ const Leagues = async () => {
   return (
     <main className="p-10">
       <MainLayout>
-        <SwipeComponents />
+        {/* <SwipeComponents /> */}
         <>
           <SharedLine header="Local" />
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">

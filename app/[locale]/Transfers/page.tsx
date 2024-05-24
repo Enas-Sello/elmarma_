@@ -6,6 +6,7 @@ const Transfers = async ({
 }: {
   params: { locale: string };
 }) => {
+  console.log('locale', locale);
   return (
     <MainLayout>
       <main>
