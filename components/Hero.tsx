@@ -24,7 +24,7 @@ const Hero = () => {
           </div>
         </Link>
         {/* 3 col */}
-        <div className="grid grid-cols-1 gap-4">
+        <div className="grid grid-cols-1 gap-4  ">
           <Link href={'/'} className="relative h-40 md:h-32">
             <Image
               src={addN1}

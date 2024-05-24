@@ -12,6 +12,7 @@ const Navbar = () => {
     <div className=" flex items-center  h-[4.5rem] bg-mainDark text-white font-medium">
       <MobileMenu />
       <div className="flex items-center w-full justify-around gap-3 lg:gap-5">
+        <div></div>
         <div className="w-16 h-16">
           <Logo />
         </div>

@@ -1,12 +1,16 @@
 'use client';
 import Spinner from '@/components/Spinner';
-import Card from '@/components/shared/Card';
 import MainLayout from '@/components/shared/MainLayout';
-import SharedLine from '@/components/shared/SharedLine';
 import { useFetch } from '@/lib/hooks/useQuery';
 import Hero from '@/components/Hero';
 import Advertisements from '@/components/Advertisements';
 import addN1 from '@/public/assets/add(1).png';
+
+import AllTeamsCarousel from '@/components/shared/AllTeamsCarousel';
+import SwipeComponent from '@/components/shared/SwipeComponent';
+import Trending from '@/components/shared/Trending';
+import News from './news/page';
+import Media from './media/page';
 
 const Home = () => {
   // news
@@ -34,46 +38,16 @@ const Home = () => {
   return (
     <main className=" p-10 ">
       <MainLayout>
-        <section>slider</section>
+        <SwipeComponent />
         <Hero />
-        {/* advertisement */}
         <Advertisements img={addN1} link={'/'} />
         {/* trending */}
-        <MainLayout>
-          <SharedLine header="Trending News" tail="more" link="/news" icon />
-          <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {
-              // news &&
-              <Card footer data={[{}, {}, {}, {}, {}].slice(0, 4)} />
-            }
-          </div>
-        </MainLayout>
+        <Trending />
         {/* news */}
-        <MainLayout>
-          <SharedLine header="Latest News" tail="more" link="/news" icon />
-          <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {
-              // news &&
-              <Card footer data={[{}, {}, {}, {}, {}].slice(0, 4)} />
-            }
-          </div>
-        </MainLayout>
-        <div> slide الفرق </div>
+        <News />
         {/* Photos and Videos */}
-        <MainLayout>
-          <SharedLine
-            header="Photos and Videos"
-            tail="more"
-            link="/media"
-            icon
-          />
-          <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {
-              // news &&
-              <Card footer data={[{}, {}, {}, {}, {}].slice(0, 4)} />
-            }
-          </div>
-        </MainLayout>
+        <Media />
+        <AllTeamsCarousel />
       </MainLayout>
     </main>
   );
