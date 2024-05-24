@@ -10,7 +10,7 @@ import AllTeamsCarousel from '@/components/shared/AllTeamsCarousel';
 import SwipeComponent from '@/components/shared/SwipeComponent';
 import Trending from '@/components/shared/Trending';
 import News from './news/page';
-import Media from './media/page';
+import Media from '@/components/Media';
 
 const Home = () => {
   // news
