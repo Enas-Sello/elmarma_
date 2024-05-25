@@ -1,58 +1,104 @@
 'use client';
-import { Separator } from '@radix-ui/react-separator';
-import { Button } from './ui/button';
-import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
-import { HiComputerDesktop } from 'react-icons/hi2';
-import Image from 'next/image';
-import team from '@/public/assets/teamtest.png';
-const LeaguesMatches = () => {
+import { useTranslation } from 'react-i18next';
+import { FaBars } from 'react-icons/fa';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Separator } from '@radix-ui/react-separator';
+import { useState } from 'react';
+
+const MobileMenu = () => {
   const { t } = useTranslation();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
+  const navLinks = [
+    {
+      header: 'Arab',
+      menu: [
+        {
+          link: '/',
+          name: 'Saudi Pro League'
+        }
+      ]
+    },
+    {
+      header: 'Local',
+      menu: [
+        {
+          link: '/',
+          name: 'Egyptian Premier League'
+        }
+      ]
+    },
+    {
+      header: 'Continental',
+      menu: [
+        {
+          link: '/',
+          name: 'UEFA European Qualifiers'
+        }
+      ]
+    },
+    {
+      header: 'European',
+      menu: [
+        {
+          link: '/',
+          name: 'Premier League'
+        }
+      ]
+    }
+  ];
+
+  const menuLinks = [
+    { name: 'Matches', link: 'matches' },
+    { name: 'News', link: 'news' },
+    { name: 'Leagues', link: 'leagues' },
+    { name: 'Elmarma Media', link: 'media' },
+    { name: 'Latest Transfers', link: 'transfers' }
+  ];
+
   return (
-    <div className="flex flex-col md:flex-row bg-white shadow-lg rounded justify-between h-fit  p-3 lg:px-10">
-      <Link
-        href={`matches/123`}
-        className="flex justify-center items-center gap-5 md:gap-10 h-full">
-        <Button variant={'outline'}>{t('Details')}</Button>
-        <Separator className="  border border-mainGray border-opacity-85 lg:h-full w-full rotate-180 lg:rotate-0" />
-      </Link>
-      <div className="flex-1 flex flex-col gap-5 justify-center items-center p-2 ">
-        <div className="flex justify-between items-center w-full px-3 lg:px-10">
-          <div className="flex gap-3 items-center text-darkGray">
-            <HiComputerDesktop />
-            <p className="">{t('bein sport 2')}</p>
-          </div>
-          <p className="p-1 px-3 border border-mainGray  rounded">
-            {t('start')}
-          </p>
-          <p className=" text-darkGray font-semibold  lg:text-lg ">
-            {t('Week 36')}
-          </p>
+    <Sheet>
+      <SheetTrigger className=" align-middle bg-primary h-full w-[3.7rem] flex justify-center items-center">
+        <FaBars onClick={toggleSidebar} className="w-5 h-5 md:w-7 md:h-7 " />
+      </SheetTrigger>
+      <SheetContent className="flex bg-primary ">
+        <div className="flex flex-col gap-5 mt-10">
+          {menuLinks.map(item => (
+            <>
+              <div className="text-sm font-normal md:font-medium md:text-lg text-white">
+                <Link href={item.link}>{t(item.name)}</Link>
+              </div>
+              <Separator className="border  border-mainWhite border-opacity-45" />
+            </>
+          ))}
         </div>
-        <div className="flex justify-center gap-4 items-center w-full px-3 lg:px-10">
-          <div className="flex items-center text-mainDark">
-            <p>name</p>
-            <div className="w-10 h-10">
-              <Image
-                priority={true}
-                alt="logo"
-                src={team}
-                placeholder="empty"
-                className=" object-cover w-full h-full"
-              />
+        {/*  */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full gap-5 p-10 bg-mainWhite">
+          {navLinks.map((link, i) => (
+            <div key={i}>
+              <div className="text-mainDark  text-lg col-span-1">
+                <h3 className="font-semibold text-base md:text-2xl pb-3 border-b-2  mb-3">
+                  {link.header}
+                </h3>
+                {link.menu.map((item, i) => (
+                  <div key={i}>
+                    <Link href={item.link} className=" text-mainGray mb-3">
+                      {item.name}
+                    </Link>
+                  </div>
+                ))}
+              </div>
+              <Separator className="border  border-mainWhite border-opacity-45" />
             </div>
-          </div>
-          <p>:</p>
-          <p>test</p>
+          ))}
         </div>
-        <div className="flex justify-between items-center w-full px-3 lg:px-10">
-          <p>test</p>
-          <p>test</p>
-          <p>test</p>
-        </div>
-      </div>
-    </div>
+      </SheetContent>
+    </Sheet>
   );
 };
 
-export default LeaguesMatches;
+export default MobileMenu;

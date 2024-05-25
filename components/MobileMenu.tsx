@@ -1,12 +1,18 @@
-'use client';
+import { Separator } from '@radix-ui/react-separator';
 import Link from 'next/link';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaBars } from 'react-icons/fa';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Separator } from '@radix-ui/react-separator';
 
-const MobileMenu = () => {
+export default function Sidebar({
+  isOpen,
+  toggleSidebar
+}: {
+  toggleSidebar: () => void;
+  isOpen: boolean;
+}) {
   const { t } = useTranslation();
+
   const navLinks = [
     {
       header: 'Arab',
@@ -53,34 +59,43 @@ const MobileMenu = () => {
     { name: 'Elmarma Media', link: 'media' },
     { name: 'Latest Transfers', link: 'transfers' }
   ];
-
   return (
-    <Sheet>
-      <SheetTrigger className=" align-middle bg-primary h-full w-[3.7rem] flex justify-center items-center">
+    <div
+      className={`fixed top-0 left-0 h-screen w-full z-50  bg-primary overflow-auto transition duration-300 ease-in-out ${
+        isOpen ? 'block' : 'hidden'
+      }`}>
+      <div className="flex items-center justify-between px-4 py-2">
         <FaBars className="w-5 h-5 md:w-7 md:h-7 " />
-      </SheetTrigger>
-      <SheetContent className="flex bg-primary ">
-        <div className="flex flex-col gap-5 mt-10">
+        <button onClick={toggleSidebar} className="text-white text-4xl">
+          &times;
+        </button>
+      </div>
+      <nav className="flex ">
+        <ul className="flex flex-col gap-8 h-full mt-8  w-full sm:w-fit">
           {menuLinks.map(item => (
-            <>
-              <div className="text-sm font-normal md:font-medium md:text-lg text-white">
-                <Link href={item.link}>{t(item.name)}</Link>
-              </div>
-              <Separator className="border  border-mainWhite border-opacity-45" />
-            </>
+            <Link key={item.link} onClick={toggleSidebar} href={item.link}>
+              <li className="px-6 py-3 rounded-md hover:bg-mainDark hover:bg-opacity-50">
+                <p className="font-medium text-lg text-white mb-3">
+                  {t(item.name)}
+                </p>
+                <Separator className="border  border-mainWhite border-opacity-45" />
+              </li>
+            </Link>
           ))}
-        </div>
-        {/*  */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full gap-5 p-10 bg-mainWhite">
+        </ul>
+        <ul className="hidden sm:grid grid-cols-4 w-full gap-5 p-10 bg-mainWhite ">
           {navLinks.map((link, i) => (
             <div key={i}>
               <div className="text-mainDark  text-lg col-span-1">
-                <h3 className="font-semibold text-base md:text-2xl pb-3 border-b-2  mb-3">
+                <h3 className="font-semibold text-base lg:text-2xl pb-3 border-b-2  mb-3">
                   {link.header}
                 </h3>
                 {link.menu.map((item, i) => (
                   <div key={i}>
-                    <Link href={item.link} className=" text-mainGray mb-3">
+                    <Link
+                      onClick={toggleSidebar}
+                      href={item.link}
+                      className="hover:bg-primary hover:bg-opacity-20 hover:text-mainDark p-2 rounded text-base lg:text-2xl font-normal lg:font-semibold text-mainGray mb-3">
                       {item.name}
                     </Link>
                   </div>
@@ -89,10 +104,8 @@ const MobileMenu = () => {
               <Separator className="border  border-mainWhite border-opacity-45" />
             </div>
           ))}
-        </div>
-      </SheetContent>
-    </Sheet>
+        </ul>
+      </nav>
+    </div>
   );
-};
-
-export default MobileMenu;
+}
