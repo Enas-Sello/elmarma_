@@ -1,7 +1,8 @@
 'use client';
 import { useFetch } from '@/lib/hooks/useQuery';
 import React from 'react';
-import Spiner from './Spinner';
+
+// import Spiner from './Spinner';
 import {
   FaTwitter,
   FaFacebook,
@@ -14,8 +15,8 @@ import { useTranslation } from 'react-i18next';
 
 const Social = () => {
   const { t } = useTranslation();
-
-  const { data, isError, isLoading, error } = useFetch<any>({
+  
+  const { data } = useFetch<any>({
     queryKey: [`social`],
     endpoint: 'setting'
   });
