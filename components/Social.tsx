@@ -23,29 +23,29 @@ const Social = () => {
   const socialMedia = [
     {
       icon: <FaYoutube size={24} className=" hover:text-red-500" />,
-      link: data?.skype_link
+      link: data?.skype_link || '/'
     },
     {
-      icon: <FaLinkedin  size={24} className=" hover:text-blue-600" />,
-      link: data?.linkedin_link
+      icon: <FaLinkedin size={24} className=" hover:text-blue-600" />,
+      link: data?.linkedin_link || '/'
     },
     {
-      icon: <FaInstagram    size={24} className=" hover:text-violet-500" />,
-      link: data?.inst_link
+      icon: <FaInstagram size={24} className=" hover:text-violet-500" />,
+      link: data?.inst_link || '/'
     },
     {
       icon: <FaFacebook size={24} className=" hover:text-blue-800" />,
-      link: data?.fb_link
+      link: data?.fb_link || '/'
     },
     {
       icon: <FaTwitter size={24} className=" hover:text-sky-600" />,
-      link: data?.tw_link
+      link: data?.tw_link || '/'
     }
   ];
 
   return (
     <>
-      <div className="flex justify-between items-center w-full">
+      <div className="flex flex-col md:flex-row gap-2 justify-between items-center w-full">
         <div className=" flex gap-2">
           <Link className="link" href={''}>
             {t('policies')}
@@ -55,21 +55,17 @@ const Social = () => {
           </Link>
         </div>
         <div className="flex  gap-2 lg:gap-10">
-          {isLoading && <Spiner />}
-          {isError && <p>{error?.message}</p>}
-          {data && (
-            <>
-              {socialMedia?.map((item, i) => (
-                <Link
-                  target="_blank"
-                  key={i}
-                  className="link "
-                  href={item.link}>
-                  {item.icon}
-                </Link>
-              ))}
-            </>
-          )}
+          {/* {isLoading && <Spiner />} */}
+          {/* {/isError && <p>{error?.message}</p>} */}
+          {/* {data && ( */}
+          <>
+            {socialMedia?.map((item, i) => (
+              <Link target="_blank" key={i} className="link " href={item.link}>
+                {item.icon}
+              </Link>
+            ))}
+          </>
+          {/* )} */}
         </div>
         <div className=" flex gap-2">
           <p className="text-mainGray">{t('All rights reserved © 2024')}</p>

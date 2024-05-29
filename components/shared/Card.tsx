@@ -12,9 +12,10 @@ interface CardProps {
   badge?: boolean;
   header?: boolean;
   footer?: boolean;
+  video?: boolean;
 }
 
-const Card = ({ data, bgColor, badge, header, footer }: CardProps) => {
+const Card = ({ data, bgColor, badge, header, footer, video }: CardProps) => {
   // Debugging to ensure props are passed correctly
   console.log(
     'bgColor:',
@@ -33,23 +34,39 @@ const Card = ({ data, bgColor, badge, header, footer }: CardProps) => {
         <Link
           href={'/'}
           key={index}
-          className={`w-[260px] xl:w-[300px] rounded flex flex-col transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-100 font-semibold ${
+          className={` w-[260px] xl:w-[300px] rounded flex flex-col transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-100 font-semibold ${
             bgColor ? `${bgColor} text-mainWhite` : 'text-mainDark shadow-2xl'
           }`}>
-          <div className="relative">
-            <Image
-              priority={true}
-              alt="test1"
-              src={test1}
-              placeholder="empty"
-              className="object-cover h-40"
-            />
-            {badge && (
-              <div className="absolute top-2 left-2">
-                <Badge>new</Badge>
-              </div>
-            )}
-          </div>
+          {video ? (
+            <div className="relative">
+              <video
+                // width="600"
+                controls
+                className="object-cover h-40">
+                <source src="/videos/sample-video.mp4" type="video/mp4" />
+              </video>
+              {badge && (
+                <div className="absolute top-2 left-2">
+                  <Badge>new</Badge>
+                </div>
+              )}
+            </div>
+          ) : (
+            <div className="relative">
+              <Image
+                priority={true}
+                alt="test1"
+                src={test1}
+                placeholder="empty"
+                className="object-cover h-40"
+              />
+              {badge && (
+                <div className="absolute top-2 left-2">
+                  <Badge>new</Badge>
+                </div>
+              )}
+            </div>
+          )}
           <div className="p-3 flex flex-col gap-3">
             {header && (
               <p className="text-primary">Lorem ipsum dolor sit amet.</p>

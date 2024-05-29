@@ -9,8 +9,8 @@ import addN1 from '@/public/assets/add(1).png';
 import AllTeamsCarousel from '@/components/shared/AllTeamsCarousel';
 import SwipeComponent from '@/components/shared/SwipeComponent';
 import Trending from '@/components/shared/Trending';
-import News from './news/page';
 import Media from '@/components/Media';
+import News from '@/components/shared/News';
 
 const Home = () => {
   // news
@@ -43,11 +43,11 @@ const Home = () => {
         <Advertisements img={addN1} link={'/'} />
         {/* trending */}
         <Trending />
-        {/* news */}
-        <News />
         {/* Photos and Videos */}
         <Media />
         <AllTeamsCarousel />
+        {/* news */}
+        <News />
       </MainLayout>
     </main>
   );

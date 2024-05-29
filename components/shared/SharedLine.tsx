@@ -25,7 +25,7 @@ const SharedLine = ({
   const currentLocale = i18n.language;
   return (
     <div
-      className={`flex justify-between items-center py-1 px-3 rounded text-mainWhite font-bold
+      className={`flex justify-between items-center py-2 px-4 rounded text-mainWhite font-bold
        ${LineColor ? `${LineColor} ` : 'bg-mainDark '}`}>
       <div className="flex items-center justify-center gap-2">
         {logo && (

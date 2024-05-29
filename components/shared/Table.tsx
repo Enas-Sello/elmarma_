@@ -1,83 +1,88 @@
-'use client';
 import React from 'react';
 import {
+  useReactTable,
   createColumnHelper,
   flexRender,
   getCoreRowModel,
-  useReactTable
+  ColumnDef
 } from '@tanstack/react-table';
-
-type Person = {
-  firstName: string;
-  lastName: string;
-  age: number;
-  visits: number;
-  status: string;
-  progress: number;
+import player from '@/public/assets/player.png';
+type Player = {
+  date: string;
+  player: string;
+  from: string;
+  to: string;
+  price: string;
+  image: string; // URL of the player's image
 };
-const defaultData: Person[] = [
+
+const data: Player[] = [
   {
-    firstName: 'tanner',
-    lastName: 'linsley',
-    age: 24,
-    visits: 100,
-    status: 'In Relationship',
-    progress: 50
+    date: '20-07-2023',
+    player: 'Khaled Abdel-fattah',
+    from: 'Smouha',
+    to: 'Al-Ahly',
+    price: '30M$',
+    image: player
   },
   {
-    firstName: 'tandy',
-    lastName: 'miller',
-    age: 40,
-    visits: 40,
-    status: 'Single',
-    progress: 80
+    date: '17-06-2023',
+    player: 'Zeiad Tarek',
+    from: 'Al-Ahly',
+    to: 'Smouha',
+    price: '10M$',
+    image: player
   },
   {
-    firstName: 'joe',
-    lastName: 'dirte',
-    age: 45,
-    visits: 20,
-    status: 'Complicated',
-    progress: 10
+    date: '20-04-2023',
+    player: 'Hossam Hassan',
+    from: 'El-Ettihad',
+    to: 'Pyramids FC',
+    price: '10M$',
+    image: player
+  },
+  {
+    date: '14-12-2022',
+    player: 'Belal El-Sayed',
+    from: 'Pyramids FC',
+    to: 'El-Ettihad',
+    price: '30M$',
+    image: player
   }
+  // Add more rows as needed
 ];
 
-const columnHelper = createColumnHelper<Person>();
+const columnHelper = createColumnHelper<Player>();
 
-const columns = [
-  columnHelper.accessor('firstName', {
-    cell: info => info.getValue(),
-    footer: info => info.column.id
+const columns: ColumnDef<Player>[] = [
+  columnHelper.accessor('date', {
+    header: 'Date'
   }),
-  columnHelper.accessor(row => row.lastName, {
-    id: 'lastName',
-    cell: info => <i>{info.getValue()}</i>,
-    header: () => <span>Last Name</span>,
-    footer: info => info.column.id
+  columnHelper.accessor('player', {
+    header: 'Player',
+    cell: info => (
+      <div className="flex items-center">
+        <img
+          src={info.row.original.image}
+          alt={info.row.original.player}
+          className="w-8 h-8 rounded-full mr-2"
+        />
+        <span>{info.getValue()}</span>
+      </div>
+    )
   }),
-  columnHelper.accessor('age', {
-    header: () => 'Age',
-    cell: info => info.renderValue(),
-    footer: info => info.column.id
+  columnHelper.accessor('from', {
+    header: 'From'
   }),
-  columnHelper.accessor('visits', {
-    header: () => <span>Visits</span>,
-    footer: info => info.column.id
+  columnHelper.accessor('to', {
+    header: 'To'
   }),
-  columnHelper.accessor('status', {
-    header: 'Status',
-    footer: info => info.column.id
-  }),
-  columnHelper.accessor('progress', {
-    header: 'Profile Progress',
-    footer: info => info.column.id
+  columnHelper.accessor('price', {
+    header: 'Price'
   })
 ];
-const Table = () => {
-  // eslint-disable-next-line no-unused-vars
-  const [data, _setData] = React.useState(() => [...defaultData]);
-  const rerender = React.useReducer(() => ({}), {})[1];
 
+const PlayerTable: React.FC = () => {
   const table = useReactTable({
     data,
     columns,
@@ -85,13 +90,15 @@ const Table = () => {
   });
 
   return (
-    <div className="p-2">
-      <table>
-        <thead>
+    <div className="overflow-x-auto">
+      <table className="min-w-full divide-y divide-gray-200">
+        <thead className="bg-gray-50">
           {table.getHeaderGroups().map(headerGroup => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map(header => (
-                <th key={header.id}>
+                <th
+                  key={header.id}
+                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   {header.isPlaceholder
                     ? null
                     : flexRender(
@@ -103,40 +110,22 @@ const Table = () => {
             </tr>
           ))}
         </thead>
-        <tbody>
+        <tbody className="bg-white divide-y divide-gray-200">
           {table.getRowModel().rows.map(row => (
             <tr key={row.id}>
               {row.getVisibleCells().map(cell => (
-                <td key={cell.id}>
+                <td
+                  key={cell.id}
+                  className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </td>
               ))}
             </tr>
           ))}
         </tbody>
-        <tfoot>
-          {table.getFooterGroups().map(footerGroup => (
-            <tr key={footerGroup.id}>
-              {footerGroup.headers.map(header => (
-                <th key={header.id}>
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(
-                        header.column.columnDef.footer,
-                        header.getContext()
-                      )}
-                </th>
-              ))}
-            </tr>
-          ))}
-        </tfoot>
       </table>
-      <div className="h-4" />
-      <button onClick={() => rerender()} className="border p-2">
-        Rerender
-      </button>
     </div>
   );
 };
 
-export default Table;
+export default PlayerTable;

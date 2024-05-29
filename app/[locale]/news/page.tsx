@@ -7,6 +7,7 @@ import SharedLine from '@/components/shared/SharedLine';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
 import addN2 from '@/public/assets/add(2).png';
+import AllTeamsCarousel from '@/components/shared/AllTeamsCarousel';
 
 const News = () => {
   const { t } = useTranslation();
@@ -14,7 +15,7 @@ const News = () => {
   return (
     <main className="p-10">
       <MainLayout>
-        {/* <SwipeComponents /> */}
+        <AllTeamsCarousel />
         <SharedLine header="news" />
         <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {
