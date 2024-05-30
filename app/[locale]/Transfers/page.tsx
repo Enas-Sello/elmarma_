@@ -8,6 +8,7 @@ import Image from 'next/image';
 import logo from '@/public/assets/transfers.png';
 import Card from '@/components/shared/Card';
 import { useTranslation } from 'react-i18next';
+import News from '@/components/shared/News';
 
 const Transfers = () => {
   const { t } = useTranslation();
@@ -43,6 +44,7 @@ const Transfers = () => {
           </div>
           <Table />
         </div>
+        <News/>
       </MainLayout>
     </main>
   );

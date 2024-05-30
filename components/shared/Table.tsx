@@ -1,32 +1,35 @@
-//@ts-ignore
-// @ts-nocheck
-
+'use client';
 import {
   useReactTable,
   createColumnHelper,
   flexRender,
-  getCoreRowModel,
-  ColumnDef
+  getCoreRowModel
 } from '@tanstack/react-table';
 import player from '@/public/assets/player.png';
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
+import { Button } from '../ui/button';
 type Player = {
   date: string;
   player: string;
   from: string;
   to: string;
   price: string;
-  image: string; // URL of the player's image
+  image: any; // URL of the player's image
+  clubImage: any;
+  transferClub: any;
 };
 
-const data: Player[] = [
+const data = [
   {
     date: '20-07-2023',
     player: 'Khaled Abdel-fattah',
     from: 'Smouha',
     to: 'Al-Ahly',
     price: '30M$',
-    image: player
+    image: player,
+    clubImage: player,
+    transferClub: player
   },
   {
     date: '17-06-2023',
@@ -34,7 +37,9 @@ const data: Player[] = [
     from: 'Al-Ahly',
     to: 'Smouha',
     price: '10M$',
-    image: player
+    image: player,
+    clubImage: player,
+    transferClub: player
   },
   {
     date: '20-04-2023',
@@ -42,7 +47,9 @@ const data: Player[] = [
     from: 'El-Ettihad',
     to: 'Pyramids FC',
     price: '10M$',
-    image: player
+    image: player,
+    clubImage: player,
+    transferClub: player
   },
   {
     date: '14-12-2022',
@@ -50,14 +57,16 @@ const data: Player[] = [
     from: 'Pyramids FC',
     to: 'El-Ettihad',
     price: '30M$',
-    image: player
+    image: player,
+    clubImage: player,
+    transferClub: player
   }
   // Add more rows as needed
 ];
 
 const columnHelper = createColumnHelper<Player>();
 
-const columns: ColumnDef<Player>[] = [
+const columns = [
   columnHelper.accessor('date', {
     header: 'Date'
   }),
@@ -75,10 +84,30 @@ const columns: ColumnDef<Player>[] = [
     )
   }),
   columnHelper.accessor('from', {
-    header: 'From'
+    header: 'From',
+    cell: info => (
+      <div className="flex items-center">
+        <Image
+          src={info.row.original.clubImage}
+          alt={info.row.original.player}
+          className="w-8 h-8 rounded-full mr-2"
+        />
+        <span>{info.getValue()}</span>
+      </div>
+    )
   }),
   columnHelper.accessor('to', {
-    header: 'To'
+    header: 'To',
+    cell: info => (
+      <div className="flex items-center">
+        <Image
+          src={info.row.original.clubImage}
+          alt={info.row.original.player}
+          className="w-8 h-8 rounded-full mr-2"
+        />
+        <span>{info.getValue()}</span>
+      </div>
+    )
   }),
   columnHelper.accessor('price', {
     header: 'Price'
@@ -87,6 +116,8 @@ const columns: ColumnDef<Player>[] = [
 
 // eslint-disable-next-line no-undef
 const PlayerTable: React.FC = () => {
+  const { t } = useTranslation();
+
   const table = useReactTable({
     data,
     columns,
@@ -128,6 +159,28 @@ const PlayerTable: React.FC = () => {
           ))}
         </tbody>
       </table>
+      <div className=" shadow-2xl flex justify-center items-center align-middle  w-full">
+        {/* <select
+            className="bg-white w-full"
+            value={table.getState().pagination.pageSize}
+            onChange={e => {
+              table.setPageSize(Number(e.target.value));
+            }}>
+            {[10, 20, 30, 40, 50].map(pageSize => (
+              <option key={pageSize} value={pageSize}>
+                {pageSize}
+              </option>
+            ))}
+          </select> */}
+        <Button
+          value={table.getState().pagination.pageSize}
+          variant={'destructive'}
+          onClick={e => {
+            table.setPageSize(Number(e.target));
+          }}>
+          {t('Show More')}
+        </Button>
+      </div>
     </div>
   );
 };
