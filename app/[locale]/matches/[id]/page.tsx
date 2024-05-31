@@ -84,31 +84,31 @@ const MatchDetails = () => {
                 <table className="table-auto w-full border border-collapse font-bold ">
                   <thead>
                     <tr className="bg-mainDark  text-lg text-white lg:text-2xl font-normal p-2 rounded lg:font-bold text-center mb-4">
-                      <th className="px-4 py-2">{t('Ranking')}</th>
-                      <th className="px-4 py-2 text-center">{t('Team')}</th>
-                      <th className="px-4 py-2">{t('W')}</th>
-                      <th className="px-4 py-2">{t('L')}</th>
-                      <th className="px-4 py-2">{t('D')}</th>
                       <th className="px-4 py-2">{t('Points')}</th>
+                      <th className="px-4 py-2">{t('D')}</th>
+                      <th className="px-4 py-2">{t('L')}</th>
+                      <th className="px-4 py-2">{t('W')}</th>
+                      <th className="px-4 py-2 text-center">{t('Team')}</th>
+                      <th className="px-4 py-2">{t('Ranking')}</th>
                     </tr>
                   </thead>
                   <tbody>
                     {ranking.map(rank => (
                       <tr key={rank.rank} className="border-b text-center">
                         <td className="px-4 py-2">{t(rank.rank)}</td>
+                        <td className="px-4 py-2">{t(rank.points)}</td>
+                        <td className="px-4 py-2">{t(rank.d)}</td>
+                        <td className="px-4 py-2">{t(rank.l)}</td>
+                        <td className="px-4 py-2">{t(rank.w)}</td>
                         <td className="px-4 py-2 flex justify-center items-center gap-2">
+                          {t(rank.team.name)}
                           <Image
                             priority={true}
                             className="h-8 w-8"
                             src={rank.team.img}
                             alt={rank.team.name}
                           />
-                          {t(rank.team.name)}
                         </td>
-                        <td className="px-4 py-2">{t(rank.w)}</td>
-                        <td className="px-4 py-2">{t(rank.l)}</td>
-                        <td className="px-4 py-2">{t(rank.d)}</td>
-                        <td className="px-4 py-2">{t(rank.points)}</td>
                       </tr>
                     ))}
                   </tbody>
