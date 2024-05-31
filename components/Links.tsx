@@ -8,7 +8,7 @@ const Links = () => {
     { name: 'Matches', link: 'matches' },
     { name: 'News', link: 'news' },
     { name: 'Leagues', link: 'leagues' },
-    { name: ' Media', link: 'media' },
+    { name: 'Media', link: 'media' },
     { name: 'Latest Transfers', link: 'transfers' }
   ];
 

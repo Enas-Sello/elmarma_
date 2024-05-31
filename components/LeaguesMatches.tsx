@@ -7,8 +7,10 @@ import { HiComputerDesktop } from 'react-icons/hi2';
 import Image from 'next/image';
 import team from '@/public/assets/teamtest.png';
 import { Key } from 'react';
-const LeaguesMatches = ({ data }: any) => {
+const LeaguesMatches = ({ data, locale }: any) => {
   const { t } = useTranslation();
+  console.log('locale',locale);
+
   return (
     <>
       {data &&

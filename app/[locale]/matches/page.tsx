@@ -1,5 +1,6 @@
-'use client';
+// 'use client';
 import CalenderCarousel from '@/components/CalenderCarousel';
+import Header from '@/components/Header';
 // import { CalendarForm } from '@/components/CalendarForm';
 import LeaguesMatches from '@/components/LeaguesMatches';
 import MainLayout from '@/components/shared/MainLayout';
@@ -8,11 +9,12 @@ import Trending from '@/components/shared/Trending';
 // import SwipeComponents from '@/components/shared/SwipeComponents';
 import logotest from '@/public/assets/logotest.png';
 import SerieA from '@/public/assets/SerieA.png';
-import { Separator } from '@radix-ui/react-separator';
-import { useTranslation } from 'react-i18next';
 
-const Matches = () => {
-  const { t } = useTranslation();
+const Matches = async ({
+  params: { locale }
+}: {
+  params: { locale: string };
+}) => {
   const matches = [
     { team: { name: 'La Liga', logo: logotest }, match: [{}, {}] },
     { team: { name: 'Serie A', logo: SerieA }, match: [{}, {}] }
@@ -25,13 +27,7 @@ const Matches = () => {
           <h3 className="font-bold text-4xl ">{t('all matches')}</h3>
           <CalendarForm />
         </div> */}
-          <div className="flex justify-between items-center">
-            <p>{t('Matches on Tuesday, May 7, 2024')}</p>
-            <p>
-              14 {t('matches')} / 7 {t('tournaments')}
-            </p>
-          </div>
-          <Separator className=" border  border-mainGray" />
+          <Header />
           <div className="p-10">
             <CalenderCarousel />
           </div>
@@ -43,10 +39,10 @@ const Matches = () => {
               LineColor="bg-primary"
               logo={item.team.logo}
             />
-            <LeaguesMatches data={item.match} />
+            <LeaguesMatches locale={locale} data={item.match} />
           </>
         ))}
-      <Trending/>
+        <Trending />
       </MainLayout>
     </main>
   );

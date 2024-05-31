@@ -3,7 +3,7 @@ import AllTeamsCarousel from '@/components/shared/AllTeamsCarousel';
 import MainLayout from '@/components/shared/MainLayout';
 import SharedLine from '@/components/shared/SharedLine';
 import SwipeComponent from '@/components/shared/SwipeComponent';
-import Table from '@/components/shared/Table';
+import PlayerTable from '@/components/shared/PlayerTable';
 import Image from 'next/image';
 import logo from '@/public/assets/transfers.png';
 import Card from '@/components/shared/Card';
@@ -42,9 +42,9 @@ const Transfers = () => {
           <div className="flex w-full justify-between">
             <p className="font-semibold">{t('All Transfers')}</p>
           </div>
-          <Table />
+          <PlayerTable />
         </div>
-        <News/>
+        <News />
       </MainLayout>
     </main>
   );
