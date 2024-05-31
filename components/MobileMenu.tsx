@@ -65,6 +65,7 @@ export default function Sidebar({
 
   const dataManipulation = (pathname: string) => {
     const url = new URL(pathname, window.location.origin);
+    console.log('tournaments', url);
     url.searchParams.append('data', 'team name');
     router.push(url.toString());
   };
