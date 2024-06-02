@@ -11,10 +11,14 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import { useTranslation } from 'react-i18next';
+import { useEffect } from 'react';
 
 const SwipeComponent = () => {
   const { t, i18n } = useTranslation();
   const currentLocale = i18n.language;
+  useEffect(() => {
+    document.body.dir = currentLocale === 'ar' ? 'rtl' : 'ltr';
+  }, [currentLocale]);
   return (
     <div className="p-10 ">
       <div className="flex justify-center items-center">
@@ -42,21 +46,31 @@ const SwipeComponent = () => {
       </div>
       <Carousel className="">
         <CarouselContent className="">
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3 p-0">
-            <CarouselItems />
-          </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3 p-0">
-            <CarouselItems />
-          </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3 p-0">
-            <CarouselItems />
-          </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3 p-0">
-            <CarouselItems />
-          </CarouselItem>
+          {Array.from({ length: 6 }).map((_, i) => (
+            <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/3 p-0">
+              <CarouselItems />
+            </CarouselItem>
+          ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        {currentLocale === 'ar' ? (
+          <>
+            <CarouselPrevious className="absolute top-1/2 transform -translate-y-1/2 left-0">
+              <IoIosArrowForward />
+            </CarouselPrevious>
+            <CarouselNext className="absolute top-1/2 transform -translate-y-1/2 right-0">
+              <IoIosArrowBack />
+            </CarouselNext>
+          </>
+        ) : (
+          <>
+            <CarouselPrevious className="absolute top-1/2 transform -translate-y-1/2 left-0">
+              <IoIosArrowBack />
+            </CarouselPrevious>
+            <CarouselNext className="absolute top-1/2 transform -translate-y-1/2 right-0">
+              <IoIosArrowForward />
+            </CarouselNext>
+          </>
+        )}
       </Carousel>
     </div>
   );

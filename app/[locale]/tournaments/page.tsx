@@ -39,8 +39,14 @@ const ranking: rankingType[] = [
   }
 ];
 const matches = [
-  { team: { name: 'La Liga', logo: logotest }, match: [{}, {}] },
-  { team: { name: 'Serie A', logo: SerieA }, match: [{}, {}] }
+  {
+    team: { name: 'La Liga', logo: logotest },
+    match: [{ id: '12347' }, { id: '12341' }]
+  },
+  {
+    team: { name: 'Serie A', logo: SerieA },
+    match: [{ id: '1234' }, { id: '12346' }]
+  }
 ];
 const Tournaments = () => {
   const { t } = useTranslation();

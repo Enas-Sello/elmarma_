@@ -63,12 +63,14 @@ export default function Sidebar({
   const router = useRouter();
   const { t } = useTranslation();
 
-  const dataManipulation = (pathname: string) => {
-    const url = new URL(pathname, window.location.origin);
-    console.log('tournaments', url);
-    url.searchParams.append('data', 'team name');
-    console.log('tournaments22', url);
-    router.push(url.toString());
+  const navigate = (pathname: string | URL, teamName: string) => {
+    if (typeof window !== 'undefined') {
+      const url = new URL(pathname, window.location.origin);
+      console.log('tournaments', url);
+      url.searchParams.append('data', teamName);
+      console.log('tournaments22', url);
+      router.push(url.toString());
+    }
   };
 
   return (
@@ -104,7 +106,7 @@ export default function Sidebar({
                 </h3>
                 {link.menu.map((item, i) => (
                   <Button
-                    onClick={() => dataManipulation(item.link)}
+                    onClick={() => navigate(item.link, item.name)}
                     variant={'ghost'}
                     key={i}>
                     <Link

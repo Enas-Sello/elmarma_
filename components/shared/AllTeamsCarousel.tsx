@@ -20,24 +20,9 @@ const allTeams: any[] = [
   {},
   {},
   {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
   {}
 ];
+
 const AllTeamsCarousel = () => {
   return (
     <Carousel
@@ -47,7 +32,7 @@ const AllTeamsCarousel = () => {
       }}
       plugins={[
         Autoplay({
-          delay: 2000
+          delay: 1000
         })
       ]}>
       <CarouselContent className="gap-4 flex">

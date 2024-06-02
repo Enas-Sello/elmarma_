@@ -19,7 +19,7 @@ const LeaguesMatches = ({ data, locale }: any) => {
             key={i}
             className="flex flex-col md:flex-row bg-white shadow-lg rounded justify-between  md:h-52 p-3 lg:px-10">
             <Link
-              href={`matches/123`}
+              href={`matches/${item.id ||'123'}`}
               className="flex flex-col md:flex-row justify-center items-center gap-5 md:gap-10 h-full">
               <Button variant={'outline'}>{t('Details')}</Button>
               <Separator className=" border border-mainGray border-opacity-85 w-full rotate-180 md:rotate-0  md:h-full" />

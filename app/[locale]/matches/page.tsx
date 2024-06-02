@@ -16,8 +16,14 @@ const Matches = async ({
   params: { locale: string };
 }) => {
   const matches = [
-    { team: { name: 'La Liga', logo: logotest }, match: [{}, {}] },
-    { team: { name: 'Serie A', logo: SerieA }, match: [{}, {}] }
+    {
+      team: { name: 'La Liga', logo: logotest },
+      match: [{ id: '123' }, { id: '1234' }]
+    },
+    {
+      team: { name: 'Serie A', logo: SerieA },
+      match: [{ id: '12346' }, { id: '12345' }]
+    }
   ];
   return (
     <main className="p-10">
