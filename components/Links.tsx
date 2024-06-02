@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 
-const Links = () => {
-  const navLinks = [
+const Links = ({ data }: any) => {
+  const navLinks = data || [
     { name: 'Matches', link: 'matches' },
     { name: 'News', link: 'news' },
     { name: 'Leagues', link: 'leagues' },
@@ -16,7 +16,6 @@ const Links = () => {
   const pathname = usePathname();
   const path = pathname.split('/');
   const active = path[path.length - 1];
-  console.log(active);
   return (
     <div className=" flex  gap-1 md:gap-3 lg:gap-10">
       {navLinks.map((item: any) => (

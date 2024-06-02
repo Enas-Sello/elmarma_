@@ -39,5 +39,15 @@
   "Continental": "Continental",
   "European": "European",
   "Arab": "Arab",
-  "La Liga": "La Liga"
+  "La Liga": "La Liga",
+  "Premier League": "Premier League",
+  "Saudi Pro League": "Saudi Pro Leagu",
+  "Egyptian Premier League": "Egyptian Premier League",
+  "UEFA European Qualifiers": "UEFA European Qualifiers",
+  "Home": "Home ",
+  "Results ": "Results ",
+  "Team": "Team ",
+  "statistics": "statistics ",
+  "Multimedia": "Multimedia",
+  "Scorers": "Scorers"
 }

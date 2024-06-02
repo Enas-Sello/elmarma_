@@ -27,7 +27,6 @@ const Home = () => {
   //   endpoint: 'posts?type=parent-post',
   //   queryKey: ['news']
   // });
-  console.log('data1', news && news);
   {
     isNewsError && <p>{newsError?.message}</p>;
   }

@@ -102,7 +102,7 @@ export default function Sidebar({
             <div key={i}>
               <div className="text-mainDark  text-lg col-span-1">
                 <h3 className="font-semibold text-base lg:text-2xl pb-3 border-b-2  mb-3">
-                  {link.header}
+                  {t(link.header)}
                 </h3>
                 {link.menu.map((item, i) => (
                   <Button
@@ -113,7 +113,7 @@ export default function Sidebar({
                       onClick={toggleSidebar}
                       href={item.link}
                       className="hover:bg-primary hover:bg-opacity-20 hover:text-mainDark p-2 rounded text-base lg:text-2xl font-normal lg:font-semibold text-mainGray mb-3">
-                      {item.name}
+                      {t(item.name)}
                     </Link>
                   </Button>
                 ))}
