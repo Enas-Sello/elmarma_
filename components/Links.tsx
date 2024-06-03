@@ -5,11 +5,11 @@ import { useTranslation } from 'react-i18next';
 
 const Links = ({ data }: any) => {
   const navLinks = data || [
-    { name: 'Matches', link: 'matches' },
-    { name: 'News', link: 'news' },
-    { name: 'Leagues', link: 'leagues' },
-    { name: 'Media', link: 'media' },
-    { name: 'Latest Transfers', link: 'transfers' }
+    { name: 'Matches', link: '/matches' },
+    { name: 'News', link: '/news' },
+    { name: 'Leagues', link: '/leagues' },
+    { name: 'Media', link: '/media' },
+    { name: 'Latest Transfers', link: '/transfers' }
   ];
 
   const { t } = useTranslation();
