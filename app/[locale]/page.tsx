@@ -15,7 +15,7 @@ import News from '@/components/shared/News';
 const Home = () => {
   // news
   const {
-    data: news,
+    data,
     isError: isNewsError,
     isLoading: isNewLoading,
     error: newsError
@@ -23,15 +23,15 @@ const Home = () => {
     endpoint: 'match-videos',
     queryKey: ['news']
   });
-  // const { data2 } = useFetch<any>({
-  //   endpoint: 'posts?type=parent-post',
-  //   queryKey: ['news']
-  // });
+
   {
     isNewsError && <p>{newsError?.message}</p>;
   }
   {
     isNewLoading && <Spinner />;
+  }
+  {
+    data && <></>;
   }
 
   return (

@@ -63,16 +63,32 @@ export default function Sidebar({
   const router = useRouter();
   const { t } = useTranslation();
 
+  // const navigate = (pathname: string | URL, teamName: string) => {
+  //   if (typeof window !== 'undefined') {
+  //     const url = new URL(pathname, window.location.origin);
+  //     console.log('tournaments', url);
+  //     url.searchParams.append('data', teamName);
+  //     console.log('tournaments22', url);
+  //     router.push(url.toString());
+  //   }
+  // };
   const navigate = (pathname: string | URL, teamName: string) => {
     if (typeof window !== 'undefined') {
-      const url = new URL(pathname, window.location.origin);
-      console.log('tournaments', url);
-      url.searchParams.append('data', teamName);
-      console.log('tournaments22', url);
+      let url;
+      try {
+        url = new URL(pathname, window.location.origin);
+      } catch (error) {
+        console.error('Error creating URL:', error);
+        return; 
+      }
+  
+      const query = new URLSearchParams({ name: String(teamName) }); 
+      url.search = query.toString();
+  
       router.push(url.toString());
     }
   };
-
+  
   return (
     <div
       className={`fixed top-0 left-0 h-screen w-full z-50  bg-primary overflow-auto transition duration-300 ease-in-out ${
