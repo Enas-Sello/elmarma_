@@ -20,6 +20,10 @@ const allTeams: any[] = [
   {},
   {},
   {},
+  {},
+  {},
+  {},
+  {},
   {}
 ];
 
@@ -28,7 +32,8 @@ const AllTeamsCarousel = () => {
     <Carousel
       className="bg-primary bg-opacity-10 shadow-inner p-3 rounded"
       opts={{
-        loop: true
+        align:'start',
+        direction:'rtl'
       }}
       plugins={[
         Autoplay({

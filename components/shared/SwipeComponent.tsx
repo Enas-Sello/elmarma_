@@ -44,7 +44,12 @@ const SwipeComponent = () => {
           </div>
         </div>
       </div>
-      <Carousel className="">
+      <Carousel
+        opts={{
+          align: 'start',
+          direction: 'rtl'
+        }}
+        className="">
         <CarouselContent className="">
           {Array.from({ length: 6 }).map((_, i) => (
             <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/3 p-0">
@@ -54,10 +59,10 @@ const SwipeComponent = () => {
         </CarouselContent>
         {currentLocale === 'ar' ? (
           <>
-            <CarouselPrevious className="absolute top-1/2 transform -translate-y-1/2 left-0">
+            <CarouselPrevious className="absolute top-1/2 transform -translate-y-1/2 -left-10">
               <IoIosArrowForward />
             </CarouselPrevious>
-            <CarouselNext className="absolute top-1/2 transform -translate-y-1/2 right-0">
+            <CarouselNext className="absolute top-1/2 transform -translate-y-1/2 -right-10">
               <IoIosArrowBack />
             </CarouselNext>
           </>
