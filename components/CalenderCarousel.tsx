@@ -50,8 +50,9 @@ const CalenderCarousel = () => {
     <Carousel
       className="bg-primary bg-opacity-10 shadow-inner p-3 rounded"
       opts={{
-        align:'start',
-        direction:'rtl'
+        align: 'start',
+        direction: 'rtl',
+        // startIndex: 1
       }}>
       <CarouselContent className="gap-4 flex">
         {days.map((day, i) => (

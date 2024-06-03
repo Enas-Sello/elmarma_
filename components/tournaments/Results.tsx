@@ -4,8 +4,8 @@ import SharedLine from '../shared/SharedLine';
 import LeaguesMatches from '../LeaguesMatches';
 import logotest from '@/public/assets/logotest.png';
 import SerieA from '@/public/assets/SerieA.png';
-
 import SideData from '../shared/SideData';
+
 
 
 const matches = [
@@ -23,7 +23,7 @@ const Results = () => {
   return (
     <MainLayout>
       <main className="p-10">
-        <div className="grid grid-cols-5 gap-10 items-center">
+        <div className="grid md:grid-cols-5 gap-10">
           <div className="col-span-3 flex flex-col gap-5">
             <SharedLine header="Results" LineColor="bg-[#3D185C]" />
             {matches.map(item => (

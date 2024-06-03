@@ -15,7 +15,7 @@ const Links = ({ data }: any) => {
   const { t } = useTranslation();
   const pathname = usePathname();
   const path = pathname.split('/');
-  const active = path[path.length - 1];
+  const active = `/${path[path.length - 1]}`;
   return (
     <div className=" flex  gap-1 md:gap-3 lg:gap-10">
       {navLinks.map((item: any) => (

@@ -34,7 +34,7 @@ const Card = ({ data, bgColor, badge, header, footer, video }: CardProps) => {
         <Link
           href={'/'}
           key={index}
-          className={` w-[260px] xl:w-[280px] rounded flex flex-col transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-100 font-semibold ${
+          className={` w-[260px] xl:w-[280px] rounded flex flex-col transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-80 duration-100 font-semibold ${
             bgColor ? `${bgColor} text-mainWhite` : 'text-mainDark shadow-2xl'
           }`}>
           {video ? (

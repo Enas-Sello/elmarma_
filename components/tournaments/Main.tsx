@@ -11,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 import SharedLine from '../shared/SharedLine';
 import Advertisements from '../Advertisements';
 import LeaguesMatches from '../LeaguesMatches';
+import MostRead from '../shared/MostRead';
 
 type rankingType = {
   rank: string;
@@ -20,8 +21,26 @@ type rankingType = {
   d: string;
   points: string;
 };
+const mostReadData = {
+  title: 'Most Read',
+  items: [
+    'SpaceX Launches Falcon Heavy Rocket with Classified Military Payload',
+    'US Economy Grew at a Solid Pace in Q1, But Inflation Looms Large',
+    'Scientists Discover New Species of Deep-Sea Glowing Fish',
+    'AI Artworks Fetch High Prices at Auction, Raising Questions About Creativity',
+    'Global Chip Shortage Continues to Impact Tech Industry',
+  ],
+};
 
 const ranking: rankingType[] = [
+  {
+    rank: '1',
+    team: { img: Manchester, name: 'Manchester City' },
+    w: '2',
+    d: '1',
+    l: '5',
+    points: '50%'
+  },
   {
     rank: '1',
     team: { img: Manchester, name: 'Manchester City' },
@@ -41,7 +60,7 @@ const matches = [
     match: [{ id: '1234' }, { id: '12346' }]
   }
 ];
-const Home = () => {
+const Main = () => {
   const { t } = useTranslation();
 
   return (
@@ -98,14 +117,14 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      <div className="flex flex-wrap gap-12">
+      <div className="flex flex-wrap lg:flex-nowrap gap-12">
         <div className="flex flex-col gap-3 items-center flex-1">
           <SharedLine
             header=" Premier League standings"
             LineColor="bg-[#3D185C]"
           />
           <div className="container mx-auto mt-4">
-            <table className="table-auto w-full border border-collapse font-bold ">
+            <table className="table-auto w-full border border-collapse font-bold  ">
               <thead>
                 <tr className="bg-mainDark  text-lg text-white lg:text-2xl font-normal p-2 rounded lg:font-bold text-center mb-4">
                   <th className="px-4 py-2">{t('Points')}</th>
@@ -118,13 +137,13 @@ const Home = () => {
               </thead>
               <tbody>
                 {ranking.map(rank => (
-                  <tr key={rank.rank} className="border-b text-center">
+                  <tr key={rank.rank} className="border-b text-center  bg-white">
                     <td className="px-4 py-2">{t(rank.rank)}</td>
                     <td className="px-4 py-2">{t(rank.points)}</td>
                     <td className="px-4 py-2">{t(rank.d)}</td>
                     <td className="px-4 py-2">{t(rank.l)}</td>
                     <td className="px-4 py-2">{t(rank.w)}</td>
-                    <td className="px-4 py-2 flex justify-center items-center gap-2">
+                    <td className="px-4 py-2  flex justify-center items-center gap-2">
                       {t(rank.team.name)}
                       <Image
                         priority={true}
@@ -138,6 +157,7 @@ const Home = () => {
               </tbody>
             </table>
           </div>
+          <MostRead title={mostReadData.title} items={mostReadData.items}/>
         </div>
         <Advertisements link={'/'} img={Ad} />
       </div>
@@ -147,9 +167,8 @@ const Home = () => {
           <LeaguesMatches data={item.match} />
         </>
       ))}
-    
     </div>
   );
 };
 
-export default Home;
+export default Main;
