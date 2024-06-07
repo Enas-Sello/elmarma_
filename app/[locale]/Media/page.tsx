@@ -14,25 +14,26 @@ const Media = () => {
       <MainLayout>
         <SwipeComponent />
         <AllTeamsCarousel />
-        <SharedLine header="Videos" />
-        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {
-            // media &&
-            <Card
-              video
-              footer
-              bgColor="bg-mainDark"
-              data={[{}, {}, {}, {}, {}]}
-            />
-          }
-        </div>{' '}
-        <SharedLine header="Photos and albums" />
-        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {
-            // media &&
-            <Card footer bgColor="bg-mainDark" data={[{}, {}, {}, {}, {}]} />
-          }
-        </div>{' '}
+        <SharedLine tail="More" link="/more" header="Videos" data={'videos'} />
+        {
+          // media &&
+          <Card
+            video
+            footer
+            bgColor="bg-mainDark"
+            data={[{}, {}, {}, {}, {}]}
+          />
+        }
+        <SharedLine
+          tail="More"
+          link="/more"
+          data={'photo'}
+          header="Photos and albums"
+        />
+        {
+          // media &&
+          <Card footer bgColor="bg-mainDark" data={[{}, {}, {}, {}, {}]} />
+        }
         <Advertisements img={addN2} link={'/'} />
         <News />
       </MainLayout>

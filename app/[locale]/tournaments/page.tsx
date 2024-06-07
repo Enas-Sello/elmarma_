@@ -1,7 +1,6 @@
 'use client';
 
-import { SetStateAction, useEffect, useState, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { SetStateAction, useState, Suspense } from 'react';
 import MainLayout from '@/components/shared/MainLayout';
 import SwipeComponent from '@/components/shared/SwipeComponent';
 import AllTeamsCarousel from '@/components/shared/AllTeamsCarousel';
@@ -25,21 +24,12 @@ import News from '@/components/shared/News';
 import TeamNews from '@/components/tournaments/TeamNews';
 import Main from '@/components/tournaments/Main';
 
-const TournamentsComponent = () => {
+const TournamentsComponent = ({ searchParams }: any) => {
   const { t } = useTranslation();
-  const searchParams = useSearchParams();
-  const [data, setData] = useState('');
   const [component, setComponent] = useState('Home');
 
-  console.log('====>', data);
   console.log('=======>', component);
-
-  useEffect(() => {
-    const dataParam = searchParams.get('data');
-    if (dataParam) {
-      setData(dataParam);
-    }
-  }, [searchParams]);
+  console.log('=======>', searchParams);
 
   const renderData = [
     { name: 'Home', link: 'home' },
@@ -74,16 +64,14 @@ const TournamentsComponent = () => {
               {t('Arsenal')}
             </p>
             <div className="flex gap-1 md:gap-3 flex-wrap">
-              {renderData.map((item) => (
+              {renderData.map(item => (
                 <div key={item.name}>
                   <Button
                     onClick={() => renderComponent(item.name)}
                     variant={'ghost'}
                     className={`${
-                      component === item.name &&
-                      'underline-offset-4 underline'
-                    } link text-sm sm:font-normal lg:text-lg hover:underline`}
-                  >
+                      component === item.name && 'underline-offset-4 underline'
+                    } link text-sm sm:font-normal lg:text-lg hover:underline`}>
                     {t(item.name)}
                   </Button>
                 </div>

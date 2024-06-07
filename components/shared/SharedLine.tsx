@@ -12,7 +12,8 @@ const SharedLine = ({
   tail,
   link,
   icon,
-  logo
+  logo,
+  data
 }: {
   LineColor?: string | 'bg-mainDark';
   header: string;
@@ -20,9 +21,11 @@ const SharedLine = ({
   tail?: string;
   logo?: any;
   icon?: boolean;
+  data?: string;
 }) => {
   const { t, i18n } = useTranslation();
   const currentLocale = i18n.language;
+
   return (
     <div
       className={`flex justify-between items-center py-2 px-4 rounded text-mainWhite font-bold w-full
@@ -51,7 +54,14 @@ const SharedLine = ({
         )}
       </div>
       {tail && link && (
-        <Link href={link} className="flex items-center justify-center gap-3">
+        <Link
+          href={{
+            pathname: link,
+            query: {
+              search: data
+            }
+          }}
+          className="flex items-center justify-center gap-3">
           {t(tail)}
           {currentLocale === 'en' ? <IoIosArrowForward /> : <IoIosArrowBack />}
         </Link>

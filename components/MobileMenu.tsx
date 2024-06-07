@@ -5,7 +5,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaBars } from 'react-icons/fa';
 import { Button } from './ui/button';
-import { useRouter } from 'next/navigation';
 
 const navLinks = [
   {
@@ -60,35 +59,9 @@ export default function Sidebar({
   toggleSidebar: () => void;
   isOpen: boolean;
 }) {
-  const router = useRouter();
   const { t } = useTranslation();
 
-  // const navigate = (pathname: string | URL, teamName: string) => {
-  //   if (typeof window !== 'undefined') {
-  //     const url = new URL(pathname, window.location.origin);
-  //     console.log('tournaments', url);
-  //     url.searchParams.append('data', teamName);
-  //     console.log('tournaments22', url);
-  //     router.push(url.toString());
-  //   }
-  // };
-  const navigate = (pathname: string | URL, teamName: string) => {
-    if (typeof window !== 'undefined') {
-      let url;
-      try {
-        url = new URL(pathname, window.location.origin);
-      } catch (error) {
-        console.error('Error creating URL:', error);
-        return; 
-      }
-  
-      const query = new URLSearchParams({ name: String(teamName) }); 
-      url.search = query.toString();
-  
-      router.push(url.toString());
-    }
-  };
-  
+
   return (
     <div
       className={`fixed top-0 left-0 h-screen w-full z-50  bg-primary overflow-auto transition duration-300 ease-in-out ${
@@ -104,7 +77,10 @@ export default function Sidebar({
         <ul className="flex flex-col gap-8  mt-8 w-full  sm:w-fit">
           {menuLinks.map(item => (
             <Link key={item.link} onClick={toggleSidebar} href={item.link}>
-              <li className="px-6 py-3  rounded-md hover:bg-mainDark hover:bg-opacity-50">
+              <li
+                className={`px-6 py-3 rounded-md hover:bg-mainDark hover:bg-opacity-50 ${
+                  item.name === 'Leagues' ? 'bg-mainDark bg-opacity-50' : ''
+                }`}>
                 <p className="font-medium text-lg text-white mb-3">
                   {t(item.name)}
                 </p>
@@ -121,13 +97,15 @@ export default function Sidebar({
                   {t(link.header)}
                 </h3>
                 {link.menu.map((item, i) => (
-                  <Button
-                    onClick={() => navigate(item.link, item.name)}
-                    variant={'ghost'}
-                    key={i}>
+                  <Button variant={'ghost'} key={i}>
                     <Link
                       onClick={toggleSidebar}
-                      href={item.link}
+                      href={{
+                        pathname: item.link,
+                        query: {
+                          search: item.name
+                        }
+                      }}
                       className="hover:bg-primary hover:bg-opacity-20 hover:text-mainDark p-2 rounded text-base lg:text-2xl font-normal lg:font-semibold text-mainGray mb-3">
                       {t(item.name)}
                     </Link>

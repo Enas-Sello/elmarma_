@@ -14,20 +14,22 @@ const Search = () => {
   return (
     <Dialog>
       <DialogTrigger>
-        <FaSearch size={24} />
+        <FaSearch className=" outline-none ring-0" size={16} />
       </DialogTrigger>
       <DialogContent>
-        <DialogTitle>want to find some thing</DialogTitle>
-        <div className="bg-white  rounded  border">
+        <DialogTitle className="text-white ">
+          want to find some thing
+        </DialogTitle>
+        <div className="bg-white  rounded  border oi">
           <div className="flex justify-between items-center">
             <input
               type="text"
               name="search"
               id=""
               placeholder={t('search')}
-              className="bg-transparent outline-none p-2 text-lg"
+              className="bg-transparent outline-none p-2 text-lg   ring-0"
             />
-            <div className="bg-primary p-3 rounded-tr rounded-br  text-center">
+            <div className="bg-primary p-3 rounded text-white   text-center">
               <FaSearch size={18} />
             </div>
           </div>

@@ -1,4 +1,5 @@
 'use client';
+import moment from 'moment';
 import {
   Carousel,
   CarouselContent,
@@ -6,14 +7,28 @@ import {
   CarouselNext,
   CarouselPrevious
 } from '@/components/ui/carousel';
+
 import CarouselItems from '@/components/CarouselItems';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import { useTranslation } from 'react-i18next';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const SwipeComponent = () => {
+  const [active, setActive] = useState(0);
+  const [formateValue, setFormateValue] = useState('');
+
+  const getDay = (day: any) => {
+    setActive(day);
+
+    const today = new Date();
+    const yesterday = new Date(today);
+    const currentDate = moment(yesterday.setDate(yesterday.getDate() + day));
+    const formattedDate = currentDate.format('MM/DD/YYYY');
+    setFormateValue(formattedDate);
+  };
+  console.log('formateValue', formateValue);
   const { t, i18n } = useTranslation();
   const currentLocale = i18n.language;
   useEffect(() => {
@@ -23,19 +38,33 @@ const SwipeComponent = () => {
     <div className="p-10 ">
       <div className="flex justify-center items-center">
         <div className="flex justify-between w-full items-center">
-          <div className=" flex justify-center items-center align-middle w-full ">
-            <Button className="bg-white rounded-none shadow-inner rounded-s-md text-sm font-bold">
-              {t('Tomorrow')}
-            </Button>
-            <Button className="bg-white rounded-none shadow-inner text-sm font-bold">
-              {t('Today')}
-            </Button>
-            <Button className="bg-white rounded-none shadow-inner rounded-e-md text-sm font-bold">
+          <div className=" flex justify-center items-center gap-1 align-middle w-full ">
+            <Button
+              onClick={() => getDay(-1)}
+              className={` ${
+                active === -1 ? 'bg-primary text-white' : 'bg-white'
+              } rounded hover:text-white text-sm font-bold`}>
               {t('Yesterday')}
             </Button>
+            <Button
+              onClick={() => getDay(0)}
+              className={` ${
+                active === 0 ? 'bg-primary text-white' : 'bg-white'
+              } rounded hover:text-white text-sm font-bold`}>
+              {t('Today')}
+            </Button>
+            <Button
+              onClick={() => getDay(1)}
+              className={` ${
+                active === 1 ? 'bg-primary text-white' : 'bg-white'
+              } rounded hover:text-white text-sm font-bold`}>
+              {t('Tomorrow')}
+            </Button>
           </div>
-          <div className="text-sm w-[200px] md:w-[180px] text-center md:font-semibold hover:bg-primary/90 bg-primary rounded-t-md flex gap-4 items-center p-2 px-4 text-mainWhite -mb-1">
-            <Link href={'/matches'}>{t('all matches')}</Link>
+          <div className="text-sm text-center text-nowrap md:font-semibold hover:bg-primary/90 bg-primary rounded-t-md flex gap-4 items-center p-2 px-4 text-mainWhite -mb-1">
+            <Link href={'/matches'}>
+              <p className="text-white m-0 ">{t('All Matches')}</p>
+            </Link>
             {currentLocale === 'en' ? (
               <IoIosArrowForward />
             ) : (

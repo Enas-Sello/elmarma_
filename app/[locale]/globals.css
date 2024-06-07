@@ -3,10 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  /* body {
-    @apply bg-mainWhite dark:bg-mainDark;
-  } */
-   :root {
+  :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
@@ -71,10 +68,8 @@
     background-color: var(--background);
     color: var(--foreground);
   } 
-}
-@layer base {
   .link {
-    @apply transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-90 duration-100;
+    @apply transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 duration-100;
   }
   /* * {
       @apply border-border;
