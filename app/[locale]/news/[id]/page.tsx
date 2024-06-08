@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import transfer from '@/public/assets/transfers.png';
 import MostRead from '@/components/shared/MostRead';
 import Advertisements from '@/components/Advertisements';
-import addN2 from '@/public/assets/ad.png';
+import addN2 from '@/public/assets/Ad.png';
 
 const mostReadData = {
   title: 'Most Read',
