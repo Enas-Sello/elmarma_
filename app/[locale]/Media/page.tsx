@@ -21,7 +21,13 @@ const Media = () => {
             video
             footer
             bgColor="bg-mainDark"
-            data={[{}, {}, {}, {}, {}]}
+            data={[
+              { link: 'news' },
+              { link: 'news' },
+              { link: 'news' },
+              { link: 'news' },
+              { link: 'news' }
+            ]}
           />
         }
         <SharedLine
@@ -32,7 +38,17 @@ const Media = () => {
         />
         {
           // media &&
-          <Card footer bgColor="bg-mainDark" data={[{}, {}, {}, {}, {}]} />
+          <Card
+            footer
+            bgColor="bg-mainDark"
+            data={[
+              { link: 'news' },
+              { link: 'news' },
+              { link: 'news' },
+              { link: 'news' },
+              { link: 'news' }
+            ].slice(0, 4)}
+          />
         }
         <Advertisements img={addN2} link={'/'} />
         <News />

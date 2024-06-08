@@ -35,7 +35,9 @@ const ranking: rankingType[] = [
     points: '50%'
   }
 ];
-const MatchDetails = () => {
+const MatchDetails = ({ searchParams }: { searchParams: { search: string } }) => {
+  console.log('=======>12', searchParams);
+
   const { t } = useTranslation('');
   const [dataType, SetDateType] = useState<DataType>('overview');
   console.log(dataType);
@@ -164,7 +166,13 @@ const MatchDetails = () => {
         {/* video */}
         {dataType === 'videos' && (
           <>
-              <Card data={[{}, {}, {}]} video />
+            <Card  data={[
+              { link: 'news' },
+              { link: 'news' },
+              { link: 'news' },
+              { link: 'news' },
+              { link: 'news' }
+            ]} video />
           </>
         )}
         <div className="flex flex-col gap-5 mt-10">

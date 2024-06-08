@@ -11,7 +11,13 @@ const News = ({ data }: any) => {
       <SharedLine header="Latest News" tail="more" link="/news" icon />
         {
           // data &&
-          <Card footer data={[{}, {}, {}, {}, {}].slice(0, 4)} />
+          <Card footer  data={[
+            { link: 'news' },
+            { link: 'news' },
+            { link: 'news' },
+            { link: 'news' },
+            { link: 'news' }
+          ]}/>
         }
     </MainLayout>
   );

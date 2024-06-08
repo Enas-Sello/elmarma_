@@ -9,10 +9,19 @@ const Media = ({ data }: any) => {
   return (
     <MainLayout>
       <SharedLine header="Photos and Videos" tail="more" link="/media" icon />
-        {
-          // data &&
-          <Card footer data={[{}, {}, {}, {}, {}].slice(0, 4)} />
-        }
+      {
+        // data &&
+        <Card
+          footer
+          data={[
+            { link: 'news' },
+            { link: 'news' },
+            { link: 'news' },
+            { link: 'news' },
+            { link: 'news' }
+          ].slice(0, 4)}
+        />
+      }
     </MainLayout>
   );
 };

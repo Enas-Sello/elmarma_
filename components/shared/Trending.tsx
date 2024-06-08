@@ -10,7 +10,13 @@ const Trending = ({ data }: any) => {
       <SharedLine header="Trending News" tail="more" link="/news" icon />
       {
         // data &&
-        <Card footer data={[{}, {}, {}, {}, {}, {}].slice(0, 6)} />
+        <Card footer data={[
+          { link: 'news' },
+          { link: 'news' },
+          { link: 'news' },
+          { link: 'news' },
+          { link: 'news' }
+        ].slice(0, 4)} />
       }
     </MainLayout>
   );

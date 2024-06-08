@@ -11,9 +11,26 @@ const Multimedia = () => {
       <main className="p-10">
         <div className="flex flex-col gap-10">
           <SharedLine header="Videos" LineColor="bg-[#3D185C]" />
-          <Card data={[{}, {}, {}]} video />
+          <Card
+            data={[
+              { link: 'news' },
+              { link: 'news' },
+              { link: 'news' },
+              { link: 'news' },
+              { link: 'news' }
+            ]}
+            video
+          />
           <SharedLine header="Photos and albums" LineColor="bg-[#3D185C]" />
-          <Card data={[{}, {}, {}]} />
+          <Card
+            data={[
+              { link: 'news' },
+              { link: 'news' },
+              { link: 'news' },
+              { link: 'news' },
+              { link: 'news' }
+            ]}
+          />
           <Advertisements img={addN1} link={'/'} />
         </div>
       </main>

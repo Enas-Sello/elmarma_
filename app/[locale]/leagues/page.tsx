@@ -40,10 +40,19 @@ const Leagues = async () => {
         <>
           <MainLayout>
             <SharedLine header="Latest News" tail="more" link="/news" icon />
-              {
-                // news &&
-                <Card footer data={[{}, {}, {}, {}, {}].slice(0, 4)} />
-              }
+            {
+              // news &&
+              <Card
+                footer
+                data={[
+                  { link: 'news' },
+                  { link: 'news' },
+                  { link: 'news' },
+                  { link: 'news' },
+                  { link: 'news' }
+                ].slice(0, 4)}
+              />
+            }
           </MainLayout>
         </>
       </MainLayout>

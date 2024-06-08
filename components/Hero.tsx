@@ -8,7 +8,9 @@ const Hero = () => {
     <section>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 p-4">
         {/* main */}
-        <Link href={'/'} className="relative col-span-1 md:col-span-2 h-64 md:h-auto">
+        <Link
+          href={`/${'news' + '/123' || '/'}`}
+          className="relative col-span-1 md:col-span-2 h-64 md:h-auto">
           <Image
             src={addN1}
             alt="Real Madrid"
@@ -25,7 +27,9 @@ const Hero = () => {
         </Link>
         {/* 3 col */}
         <div className="grid grid-cols-1 gap-4  ">
-          <Link href={'/'} className="relative h-40 md:h-32">
+          <Link
+            href={`/${'news' + '/123' || '/'}`}
+            className="relative h-40 md:h-32">
             <Image
               src={addN1}
               alt="Real Madrid"
@@ -41,7 +45,9 @@ const Hero = () => {
             </div>
           </Link>
           {/*  */}
-          <Link href={'/'} className="relative h-40 md:h-32">
+          <Link
+            href={`/${'news' + '/123' || '/'}`}
+            className="relative h-40 md:h-32">
             <Image
               src={addN1}
               alt="Real Madrid"
@@ -57,7 +63,9 @@ const Hero = () => {
             </div>
           </Link>
           {/*  */}
-          <Link href={'/'} className="relative h-40 md:h-32">
+          <Link
+            href={`/${'news' + '/123' || '/'}`}
+            className="relative h-40 md:h-32">
             <Image
               src={addN1}
               alt="Real Madrid"
@@ -76,7 +84,9 @@ const Hero = () => {
         </div>
         {/* 2 col */}
         <div className="grid grid-cols-1 gap-4">
-          <Link href={'/'} className="relative h-40 md:h-auto">
+          <Link
+            href={`/${'news' + '/123' || '/'}`}
+            className="relative h-40 md:h-auto">
             <Image
               src={addN1}
               alt="Real Madrid"
@@ -92,7 +102,9 @@ const Hero = () => {
             </div>
           </Link>
           {/*  */}
-          <Link href={'/'} className="relative h-40 md:h-auto">
+          <Link
+            href={`/${'news' + '/123' || '/'}`}
+            className="relative h-40 md:h-auto">
             <Image
               src={addN1}
               alt="Real Madrid"
