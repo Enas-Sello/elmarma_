@@ -17,10 +17,20 @@ const News = () => {
       <MainLayout>
         <AllTeamsCarousel />
         <SharedLine header="news" />
-          {
-            // news &&
-            <Card footer bgColor="bg-mainDark" data={[{}, {}, {}, {}, {}]} />
-          }
+        {
+          // news &&
+          <Card
+            footer
+            bgColor="bg-mainDark"
+            data={[
+              { link: 'news' },
+              { link: 'news' },
+              { link: 'news' },
+              { link: 'news' },
+              { link: 'news' }
+            ]}
+          />
+        }
         <div className="flex justify-center items-center ">
           <Button size={'lg'} variant={'destructive'}>
             {' '}

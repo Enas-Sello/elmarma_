@@ -16,12 +16,11 @@ interface CardProps {
 }
 
 const Card = ({ data, bgColor, badge, header, footer, video }: CardProps) => {
-
   return (
     <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-4 w-full">
       {data?.map((item, index: Key) => (
         <Link
-          href={'/'}
+          href={`/${item.link + '/123' || '/'}`}
           key={index}
           className={` col-span-1 rounded flex flex-col transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-80 duration-100 font-semibold ${
             bgColor ? `${bgColor} text-mainWhite` : 'text-mainDark shadow-2xl'

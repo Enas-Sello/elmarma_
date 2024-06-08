@@ -7,7 +7,14 @@ const LeaguesCard = ({ leagues }: any) => {
     <>
       {leagues &&
         leagues?.map((item: any, i: React.Key) => (
-          <Link href="" key={i}>
+          <Link
+            href={{
+              pathname: '/tournaments',
+              query: {
+                search: 'name'
+              }
+            }}
+            key={i}>
             <div className="flex flex-col justify-center items-center max-w-56 xl:max-w-72 border border-mainDark border-opacity-20 rounded p-2 shadow-2xl">
               <Image
                 src={leagues1}
@@ -15,7 +22,7 @@ const LeaguesCard = ({ leagues }: any) => {
                 className=" object-cover"
                 priority={true}
               />
-              <p className='font-semibold'>test</p>
+              <p className="font-semibold">test</p>
             </div>
           </Link>
         ))}

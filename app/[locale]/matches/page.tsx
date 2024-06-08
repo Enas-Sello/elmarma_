@@ -1,12 +1,10 @@
 // 'use client';
 import CalenderCarousel from '@/components/CalenderCarousel';
 import Header from '@/components/Header';
-// import { CalendarForm } from '@/components/CalendarForm';
 import LeaguesMatches from '@/components/LeaguesMatches';
 import MainLayout from '@/components/shared/MainLayout';
 import SharedLine from '@/components/shared/SharedLine';
 import Trending from '@/components/shared/Trending';
-// import SwipeComponents from '@/components/shared/SwipeComponents';
 import logotest from '@/public/assets/logotest.png';
 import SerieA from '@/public/assets/SerieA.png';
 

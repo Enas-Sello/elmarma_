@@ -7,15 +7,10 @@ import AllTeamsCarousel from '@/components/shared/AllTeamsCarousel';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import Premier from '@/public/assets/PremierLeague.png';
-import { Button } from '@/components/ui/button';
 import Multimedia from '@/components/tournaments/Multimedia';
-//@ts-ignore
 import Statistics from '@/components/tournaments/Statistics';
-//@ts-ignore
 import Scorers from '@/components/tournaments/Scorers';
-//@ts-ignore
 import Team from '@/components/tournaments/Team';
-//@ts-ignore
 import Results from '@/components/tournaments/Results';
 import AstonVilla from '@/public/assets/AstonVilla.png';
 import tournamentstest from '@/public/assets/tournamentstest.png';
@@ -63,17 +58,16 @@ const TournamentsComponent = ({ searchParams }: any) => {
             <p className="text-mainWhite lg:mx-16 font-medium text-lg">
               {t('Arsenal')}
             </p>
-            <div className="flex gap-1 md:gap-3 flex-wrap">
+            <div className="flex flex-wrap gap-5 md:flex-nowrap">
               {renderData.map(item => (
                 <div key={item.name}>
-                  <Button
+                  <div
                     onClick={() => renderComponent(item.name)}
-                    variant={'ghost'}
                     className={`${
                       component === item.name && 'underline-offset-4 underline'
-                    } link text-sm sm:font-normal lg:text-lg hover:underline`}>
+                    } text-sm  md:text-base sm:font-normal hover:underline`}>
                     {t(item.name)}
-                  </Button>
+                  </div>
                 </div>
               ))}
             </div>

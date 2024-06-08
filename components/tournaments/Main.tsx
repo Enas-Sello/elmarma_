@@ -28,8 +28,8 @@ const mostReadData = {
     'US Economy Grew at a Solid Pace in Q1, But Inflation Looms Large',
     'Scientists Discover New Species of Deep-Sea Glowing Fish',
     'AI Artworks Fetch High Prices at Auction, Raising Questions About Creativity',
-    'Global Chip Shortage Continues to Impact Tech Industry',
-  ],
+    'Global Chip Shortage Continues to Impact Tech Industry'
+  ]
 };
 
 const ranking: rankingType[] = [
@@ -137,7 +137,9 @@ const Main = () => {
               </thead>
               <tbody>
                 {ranking.map(rank => (
-                  <tr key={rank.rank} className="border-b text-center  bg-white">
+                  <tr
+                    key={rank.rank}
+                    className="border-b text-center  bg-white">
                     <td className="px-4 py-2">{t(rank.rank)}</td>
                     <td className="px-4 py-2">{t(rank.points)}</td>
                     <td className="px-4 py-2">{t(rank.d)}</td>
@@ -157,7 +159,7 @@ const Main = () => {
               </tbody>
             </table>
           </div>
-          <MostRead title={mostReadData.title} items={mostReadData.items}/>
+          <MostRead title={mostReadData.title} items={mostReadData.items} />
         </div>
         <Advertisements link={'/'} img={Ad} />
       </div>
