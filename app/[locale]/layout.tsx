@@ -45,10 +45,10 @@ async function RootLayout({
           <Provider>
             <DarkModeProviders>
               <Navbar />
-              <div className="md:px-32">
-                <div className="min-h-screen bg-mainWhite text-mainDark">{children}</div>
-              </div>
-              <div className="px-32">
+              <div className="max-w-[1100px] my-0 mx-auto">
+                <div className="min-h-screen  bg-mainWhite text-mainDark">
+                  {children}
+                </div>
                 <Footer />
               </div>
             </DarkModeProviders>
