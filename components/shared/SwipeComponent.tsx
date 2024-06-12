@@ -81,7 +81,7 @@ const SwipeComponent = () => {
         className="">
         <CarouselContent className="">
           {Array.from({ length: 6 }).map((_, i) => (
-            <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/3 p-0">
+            <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/4 p-0">
               <CarouselItems/>
             </CarouselItem>
           ))}
