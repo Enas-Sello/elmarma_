@@ -49,7 +49,7 @@ const menuLinks = [
   { name: 'Matches', link: 'matches' },
   { name: 'News', link: 'news' },
   { name: 'Leagues', link: 'leagues' },
-  { name: 'Elmarma Media', link: 'media' },
+  { name: 'Elmarma media', link: 'media' },
   { name: 'Latest Transfers', link: 'transfers' }
 ];
 export default function Sidebar({
@@ -64,11 +64,11 @@ export default function Sidebar({
 
   return (
     <div
-      className={`fixed top-0 left-0 h-screen w-full z-50  bg-primary overflow-auto transition duration-300 ease-in-out ${
+      className={`fixed top-0 left-0 h-screen w-full z-50  bg-mainDark overflow-auto transition duration-300 ease-in-out ${
         isOpen ? 'block' : 'hidden'
       }`}>
       <div className="flex items-center justify-between px-4 py-2">
-        <FaBars className="w-5 h-5 md:w-7 md:h-7 " />
+        <FaBars onClick={toggleSidebar} className="w-5 h-5 md:w-7 md:h-7 " />
         <button onClick={toggleSidebar} className="text-white text-4xl">
           &times;
         </button>
