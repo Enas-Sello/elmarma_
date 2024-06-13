@@ -15,6 +15,7 @@ const MostRead = ({ title, items }: Props) => {
       {/*  */}
       {items?.map((item, index) => (
         <div
+        
           key={index}
           className="inline-grid grid-cols-8 bg-white shadow rounded">
           <p className="p-5 col-span-1 border-e-2 border-b-2 text-center font-medium">

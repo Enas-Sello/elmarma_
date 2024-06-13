@@ -18,10 +18,10 @@ const Table: React.FC<TableProps> = ({ title, stats, items }) => {
   const { t } = useTranslation();
   return (
     <div className="container mx-auto mt-4">
-      <h2 className="bg-mainDark  text-lg text-white lg:text-2xl font-normal p-2 rounded lg:font-bold text-center mb-4">
+      <h2 className="bg-mainDark  md:text-lg text-white lg:text-2xl font-normal p-2 rounded lg:font-bold text-center mb-4">
         {t(title)}
       </h2>
-      <table className="table-auto w-full border border-collapse font-bold">
+      <table className="table-auto w-full border border-collapse md:font-bold">
         <thead>
           <tr className="bg-gray-200 text-left">
             <th className="px-4 py-2">
@@ -54,21 +54,23 @@ const Table: React.FC<TableProps> = ({ title, stats, items }) => {
         </tbody>
         <tfoot>
           {items.map(item => (
-            <tr key={item.label} className="border-b">
-              <td className="px-4 py-2 text-mainGray font-normal">
+            <tr
+              key={item.label}
+              className="text-nowrap border-b text-xs md:text-base ">
+              <td className="px-4 py-2  text-mainGray font-normal">
                 {t(item.label)}
               </td>
-              <td className="px-4 py-2 flex justify-center items-center gap-3">
+              <td className="px-4  py-2 flex justify-center items-center gap-3">
                 {item.team.map(team => (
-                  <p key={team.name} className=" flex gap-3  ">
-                    <span className="text-base font-normal">
+                  <p key={team.name} className="  flex md:gap-3  ">
+                    <span className=" md:text-base font-normal">
                       {t(team.score)} /
-                    </span> 
-                    {t(team.name)} 
+                    </span>
+                    {t(team.name)}
                   </p>
                 ))}
               </td>
-              <td className="px-4 py-2">{t(item.date)}</td>
+              <td className=" px-4 py-2">{t(item.date)}</td>
             </tr>
           ))}
         </tfoot>

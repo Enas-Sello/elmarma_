@@ -94,10 +94,10 @@ const NewsDetails = () => {
           </p>
 
           <div className="grid grid-cols-6 gap-4">
-            <div className="col-span-4">
+            <div className="col-span-6 md:col-span-4">
               <MostRead title={mostReadData.title} items={mostReadData.items} />
             </div>
-            <div className="col-span-2 ">
+            <div className="col-span-6 md:col-span-2 ">
               <Advertisements img={addN2} link={'/'} />
             </div>
           </div>

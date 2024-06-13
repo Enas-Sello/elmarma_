@@ -46,7 +46,7 @@ const SideData = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="col-span-2 flex flex-col gap-5 ">
+    <div className="col-span-5 md:col-span-2 flex flex-col gap-5 ">
       {/*  */}
       <MostRead title={mostReadData.title} items={mostReadData.items} />
       <Advertisements img={addN1} link={'/'} />

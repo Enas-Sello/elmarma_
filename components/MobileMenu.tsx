@@ -178,15 +178,15 @@ export default function Sidebar({
         )}
       </div>
       <nav className="flex ">
-        <ul className="flex  flex-col gap-8  mt-8 w-fit md:w-full  ">
+        <ul className="flex  flex-col gap-8  mt-8  w-full  ">
           {menuLinks.map(item => (
             <Link key={item.link} onClick={toggleSidebar} href={item.link}>
               <li
                 className={` text-nowrap px-6 py-3 rounded-md hover:bg-mainDark hover:bg-opacity-50`}>
                 <p
                   className={` ${
-                    item.name === 'Leagues' ? 'text-emerald-700' : ''
-                  } font-medium text-lg text-white mb-3`}>
+                    item.name === 'Leagues' ? 'md:text-emerald-700 text-mainWhite' : ''
+                  } font-medium text-lg text-white mb-3 text-center`}>
                   {t(item.name)}
                 </p>
                 <Separator className="border  border-mainWhite border-opacity-45" />

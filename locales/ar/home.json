@@ -2,9 +2,12 @@
   "home": "الرئيسيه",
   "Matches": "المباريات",
   "News": "الاخبار",
+  "news": "الاخبار",
   "Leagues": "الدوريات والبطولات",
   "Elmarma media": "المرمي ميديا ",
   "Latest Transfers": "اخر الانتقالات",
+  "Transfers News": "اخبار الانتقالات ",
+
   "other sports": " رياضه اخرى",
   "search": "بحث",
   "All Matches": "جميع المباريات",
@@ -59,7 +62,7 @@
 
   "Professional League Cup": "كأس رابطة الأندية المحترفة",
   "Second Division League - A": "دوري القسم التاني - أ",
-  
+
   "CAF Confederation Cup": "كأس ملك إسبانيا",
   "CAF Champions League": "الدوري الإيطالي",
   "Champions League": "الدوري الألماني ",
@@ -77,5 +80,7 @@
   "Ligue 1": "Ligue 1",
   "Coppa Italia": "Coppa Italia",
   " coupe de france": " coupe de france",
-  "DFB-Pokal": "DFB-Pokal"
+  "DFB-Pokal": "DFB-Pokal",
+  "Videos": "فديوهات",
+  "More": "المزيد"
 }

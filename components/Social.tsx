@@ -47,7 +47,7 @@ const Social = () => {
   return (
     <>
       <div className="flex flex-col md:flex-row gap-2 justify-between items-center w-full">
-        <div className=" flex gap-2">
+        <div className=" flex gap-4">
           <Link className="link" href={''}>
             {t('policies')}
           </Link>
@@ -55,7 +55,7 @@ const Social = () => {
             {t('call us')}
           </Link>
         </div>
-        <div className="flex  gap-2 lg:gap-10">
+        <div className="flex  gap-4 lg:gap-10">
           {/* {isLoading && <Spiner />} */}
           {/* {/isError && <p>{error?.message}</p>} */}
           {/* {data && ( */}

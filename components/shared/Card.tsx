@@ -28,7 +28,7 @@ const Card = ({ data, bgColor, badge, header, footer, video }: CardProps) => {
           {video ? (
             <div className="relative">
               <video
-                // width="600"
+                width="600"
                 controls
                 className="object-cover h-40">
                 <source src="/videos/sample-video.mp4" type="video/mp4" />

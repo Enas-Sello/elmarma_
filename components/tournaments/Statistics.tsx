@@ -9,12 +9,12 @@ const Statistics = () => {
   const { t } = useTranslation();
   return (
     <MainLayout>
-      <main className="p-10">
+      <main className="">
         <div className="grid grid-cols-5 gap-10 ">
-          <div className="col-span-3 flex flex-col gap-5">
+          <div className="col-span-5 md:col-span-3 flex flex-col gap-5">
             <SharedLine header="Statistics" LineColor="bg-[#3D185C]" />
             <div className="grid grid-cols-2 md:grid-cols-2 gap-4 items-center ">
-            {/* card */}
+              {/* card */}
               <div className="flex flex-col gap-4 shadow bg-white">
                 <p className="p-3 text-center font-medium border-b">
                   {t('Scorers')}
@@ -53,7 +53,8 @@ const Statistics = () => {
                     <p>8</p>
                     <p>{t('assists')}</p>
                   </div>
-                </div><div className="flex justify-between w-full items-center font-medium  p-2">
+                </div>
+                <div className="flex justify-between w-full items-center font-medium  p-2">
                   <p>3</p>
                   <div className="w-16 h-16 rounded-full">
                     <Image
@@ -72,8 +73,8 @@ const Statistics = () => {
                 </div>
                 {/*  */}
               </div>
-            {/* card */}
-            {/* card */}
+              {/* card */}
+              {/* card */}
               <div className="flex flex-col gap-4 shadow bg-white">
                 <p className="p-3 text-center font-medium border-b">
                   {t('Scorers')}
@@ -112,7 +113,8 @@ const Statistics = () => {
                     <p>8</p>
                     <p>{t('assists')}</p>
                   </div>
-                </div><div className="flex justify-between w-full items-center font-medium  p-2">
+                </div>
+                <div className="flex justify-between w-full items-center font-medium  p-2">
                   <p>3</p>
                   <div className="w-16 h-16 rounded-full">
                     <Image
@@ -131,8 +133,8 @@ const Statistics = () => {
                 </div>
                 {/*  */}
               </div>
-            {/* card */}
-            {/* card */}
+              {/* card */}
+              {/* card */}
               <div className="flex flex-col gap-4 shadow bg-white">
                 <p className="p-3 text-center font-medium border-b">
                   {t('Scorers')}
@@ -171,7 +173,8 @@ const Statistics = () => {
                     <p>8</p>
                     <p>{t('assists')}</p>
                   </div>
-                </div><div className="flex justify-between w-full items-center font-medium  p-2">
+                </div>
+                <div className="flex justify-between w-full items-center font-medium  p-2">
                   <p>3</p>
                   <div className="w-16 h-16 rounded-full">
                     <Image
@@ -190,7 +193,7 @@ const Statistics = () => {
                 </div>
                 {/*  */}
               </div>
-            {/* card */}
+              {/* card */}
             </div>
           </div>
           <SideData />

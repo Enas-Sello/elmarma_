@@ -22,7 +22,7 @@ const Results = () => {
 
   return (
     <MainLayout>
-      <main className="p-10">
+      <main className="">
         <div className="grid md:grid-cols-5 gap-10">
           <div className="col-span-3 flex flex-col gap-5">
             <SharedLine header="Results" LineColor="bg-[#3D185C]" />

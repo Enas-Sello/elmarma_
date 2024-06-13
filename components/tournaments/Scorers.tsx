@@ -30,7 +30,7 @@ const Scorers = () => {
 
   return (
     <MainLayout>
-      <main className="p-10">
+      <main className="">
         <SharedLine header="Team" LineColor="bg-[#3D185C]" />
         <div className="p-5">
           <table className=" table-auto w-full border border-collapse font-bold ">

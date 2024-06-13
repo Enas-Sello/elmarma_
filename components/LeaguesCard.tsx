@@ -14,8 +14,9 @@ const LeaguesCard = ({ leagues }: any) => {
                 search: 'name'
               }
             }}
+            className='col-span-1 w-full'
             key={i}>
-            <div className="flex flex-col justify-center items-center max-w-56 xl:max-w-72 border border-mainDark border-opacity-20 rounded p-2 shadow-2xl">
+            <div className="flex flex-col justify-center items-center  border border-mainDark border-opacity-20 rounded p-2 shadow-2xl">
               <Image
                 src={leagues1}
                 alt="leagues"

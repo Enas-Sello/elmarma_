@@ -9,7 +9,7 @@ const TeamNews = () => {
   const { t } = useTranslation();
   return (
     <MainLayout>
-      <main className="p-10">
+      <main className="">
         <div className="grid md:grid-cols-5 gap-10">
           <div className="col-span-3 flex flex-col gap-5">
             <div className="p-5 bg-[#3D185C] flex flex-col gap-4 rounded text-mainWhite">

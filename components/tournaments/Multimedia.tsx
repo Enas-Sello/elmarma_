@@ -8,7 +8,7 @@ import Advertisements from '../Advertisements';
 const Multimedia = () => {
   return (
     <MainLayout>
-      <main className="p-10">
+      <main className="">
         <div className="flex flex-col gap-10">
           <SharedLine header="Videos" LineColor="bg-[#3D185C]" />
           <Card

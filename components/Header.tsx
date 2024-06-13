@@ -7,7 +7,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center w-full text-nowrap text-sm md:text-lg">
         <p>{t('Matches on Tuesday, May 7, 2024')}</p>
         <p>
           14 {t('matches')} / 7 {t('tournaments')}

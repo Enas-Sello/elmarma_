@@ -29,12 +29,12 @@ const Team = () => {
   const { t } = useTranslation();
   return (
     <MainLayout>
-      <main className="p-10">
+      <main className="">
         <SharedLine header="Team" LineColor="bg-[#3D185C]" />
-        <div className="p-5">
+        <div className="p-5">md:
           <table className=" table-auto w-full border border-collapse font-bold ">
             <thead>
-              <tr className="bg-[#3D185C]  text-lg text-white lg:text-2xl font-normal p-2 rounded lg:font-bold text-center mb-4">
+              <tr className="bg-[#3D185C]  md:text-lg text-white lg:text-2xl font-normal p-2 rounded lg:font-bold text-center mb-4">
                 <th className="px-4 py-2">{t('NO.')}</th>
                 <th className="px-4 py-2">{t('Name')}</th>
                 <th className="px-4 py-2">{t('Position')}</th>
