@@ -8,7 +8,7 @@ const Links = ({ data }: any) => {
     { name: 'Matches', link: '/matches' },
     { name: 'News', link: '/news' },
     { name: 'Leagues', link: '/leagues' },
-    { name: 'Elmarma media ', link: '/media' },
+    { name: 'Elmarma media', link: '/media' },
     { name: 'Latest Transfers', link: '/transfers' }
   ];
 

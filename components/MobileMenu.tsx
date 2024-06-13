@@ -5,6 +5,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaBars } from 'react-icons/fa';
 import { Button } from './ui/button';
+import { IoCloseSharp } from 'react-icons/io5';
 
 const navLinks = [
   {
@@ -13,6 +14,26 @@ const navLinks = [
       {
         link: '/tournaments',
         name: 'Saudi Pro League'
+      },
+      {
+        link: '/tournaments',
+        name: 'Moroccan League'
+      },
+      {
+        link: '/tournaments',
+        name: "King's Cup"
+      },
+      {
+        link: '/tournaments',
+        name: 'Tunisian Ligue Professionnelle 1'
+      },
+      {
+        link: '/tournaments',
+        name: 'Qatar Stars League'
+      },
+      {
+        link: '/tournaments',
+        name: 'UAE Pro League'
       }
     ]
   },
@@ -22,6 +43,14 @@ const navLinks = [
       {
         link: '/tournaments',
         name: 'Egyptian Premier League'
+      },
+      {
+        link: '/tournaments',
+        name: 'Professional League Cup'
+      },
+      {
+        link: '/tournaments',
+        name: 'Second Division League - A'
       }
     ]
   },
@@ -31,6 +60,42 @@ const navLinks = [
       {
         link: '/tournaments',
         name: 'UEFA European Qualifiers'
+      },
+      {
+        link: '/tournaments',
+        name: 'CAF Confederation Cup'
+      },
+      {
+        link: '/tournaments',
+        name: 'CAF Champions League'
+      },
+      {
+        link: '/tournaments',
+        name: 'Champions League'
+      },
+      {
+        link: '/tournaments',
+        name: 'UEFA European Championship'
+      },
+      {
+        link: '/tournaments',
+        name: 'UEFA Europa league'
+      },
+      {
+        link: '/tournaments',
+        name: 'BAL'
+      },
+      {
+        link: '/tournaments',
+        name: 'The AFC'
+      },
+      {
+        link: '/tournaments',
+        name: 'UEFA Europa Conference League'
+      },
+      {
+        link: '/tournaments',
+        name: 'World Cup qualifiers'
       }
     ]
   },
@@ -40,6 +105,42 @@ const navLinks = [
       {
         link: '/tournaments',
         name: 'Premier League'
+      },
+      {
+        link: '/tournaments',
+        name: 'FA cup'
+      },
+      {
+        link: '/tournaments',
+        name: 'La Liga'
+      },
+      {
+        link: '/tournaments',
+        name: 'Copa Del Ray'
+      },
+      {
+        link: '/tournaments',
+        name: 'Serie A'
+      },
+      {
+        link: '/tournaments',
+        name: 'Bundesliga'
+      },
+      {
+        link: '/tournaments',
+        name: 'Ligue 1'
+      },
+      {
+        link: '/tournaments',
+        name: 'Coppa Italia'
+      },
+      {
+        link: '/tournaments',
+        name: ' coupe de france'
+      },
+      {
+        link: '/tournaments',
+        name: 'DFB-Pokal'
       }
     ]
   }
@@ -61,27 +162,31 @@ export default function Sidebar({
 }) {
   const { t } = useTranslation();
 
-
   return (
     <div
-      className={`fixed top-0 left-0 h-screen w-full z-50  bg-mainDark overflow-auto transition duration-300 ease-in-out ${
+      className={`fixed  top-0 left-0 h-screen w-full z-50  bg-mainDark overflow-hidden  ${
         isOpen ? 'block' : 'hidden'
       }`}>
       <div className="flex items-center justify-between px-4 py-2">
-        <FaBars onClick={toggleSidebar} className="w-5 h-5 md:w-7 md:h-7 " />
-        <button onClick={toggleSidebar} className="text-white text-4xl">
-          &times;
-        </button>
+        {isOpen ? (
+          <IoCloseSharp
+            onClick={toggleSidebar}
+            className="text-white text-4xl"
+          />
+        ) : (
+          <FaBars onClick={toggleSidebar} className="w-5 h-5 md:w-7 md:h-7 " />
+        )}
       </div>
       <nav className="flex ">
-        <ul className="flex flex-col gap-8  mt-8 w-full  sm:w-fit">
+        <ul className="flex  flex-col gap-8  mt-8 w-fit md:w-full  ">
           {menuLinks.map(item => (
             <Link key={item.link} onClick={toggleSidebar} href={item.link}>
               <li
-                className={`px-6 py-3 rounded-md hover:bg-mainDark hover:bg-opacity-50 ${
-                  item.name === 'Leagues' ? 'bg-mainDark bg-opacity-50' : ''
-                }`}>
-                <p className="font-medium text-lg text-white mb-3">
+                className={` text-nowrap px-6 py-3 rounded-md hover:bg-mainDark hover:bg-opacity-50`}>
+                <p
+                  className={` ${
+                    item.name === 'Leagues' ? 'text-emerald-700' : ''
+                  } font-medium text-lg text-white mb-3`}>
                   {t(item.name)}
                 </p>
                 <Separator className="border  border-mainWhite border-opacity-45" />
@@ -97,7 +202,7 @@ export default function Sidebar({
                   {t(link.header)}
                 </h3>
                 {link.menu.map((item, i) => (
-                  <Button variant={'ghost'} key={i}>
+                  <Button className="mb-3" variant={'ghost'} key={i}>
                     <Link
                       onClick={toggleSidebar}
                       href={{
@@ -106,7 +211,7 @@ export default function Sidebar({
                           search: item.name
                         }
                       }}
-                      className="hover:bg-primary hover:bg-opacity-20 hover:text-mainDark p-2 rounded text-base lg:text-2xl font-normal lg:font-semibold text-mainGray mb-3">
+                      className="hover:bg-primary hover:bg-opacity-20 hover:text-mainDark p-2 rounded text-base lg:text-2xl font-normal lg:font-semibold text-mainGray ">
                       {t(item.name)}
                     </Link>
                   </Button>
