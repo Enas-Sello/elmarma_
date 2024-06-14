@@ -9,7 +9,7 @@ const Scoreboard: React.FC = () => {
   const { t } = useTranslation();
   return (
     <div className="flex flex-col lg:flex-row  shadow-2xl  justify-between bg-mainWhite rounded p-2  lg:h-52">
-      <div className=" lg:w-2/5  flex  justify-center gap-20 items-center bg-gradient-to-l from-[#4B4FAC] rounded p-3">
+      <div className=" lg:w-2/5  flex flex-col md:flex-row  justify-center gap-5 md:gap-20 items-center bg-gradient-to-l from-[#4B4FAC] rounded p-3">
         <Image
           priority={true}
           src={Manchester}
@@ -30,7 +30,7 @@ const Scoreboard: React.FC = () => {
         <p className="  font-medium">12 .{t('December')}. 2023</p>
         <span className="text-mainGray text-sm">{t('07:00 PM')}</span>
       </div>
-      <div className=" lg:w-2/5  flex  justify-center gap-20 items-center bg-gradient-to-r   from-[#CA0538] rounded p-3">
+      <div className=" lg:w-2/5  flex  flex-col md:flex-row justify-center gap-5 md:gap-20 items-center bg-gradient-to-r   from-[#CA0538] rounded p-3">
         <span className="text-white text-xl font-semibold">{t('Arsenal')}</span>
         <Image
           priority={true}

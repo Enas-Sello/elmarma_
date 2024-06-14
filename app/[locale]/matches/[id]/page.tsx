@@ -184,7 +184,7 @@ const MatchDetails = ({ searchParams }: { searchParams: { search: string } }) =>
           <SharedLine header="Stats" />
           <div className="flex flex-col items-center justify-center gap-3">
             <p className="text-mainGray">{t('Premier League')}</p>
-            <div className="flex flex-col md:flex-row w-full  px-10">
+            <div className="flex flex-col md:flex-row w-full px-5 md:px-10">
               <div className="flex justify-evenly text-mainWhite w-full gap-3  bg-gradient-to-br md:bg-gradient-to-l   from-[#4B4FAC] to-mainWhite rounded-s  items-center p-3">
                 <Image
                   src={Manchester}
@@ -195,7 +195,7 @@ const MatchDetails = ({ searchParams }: { searchParams: { search: string } }) =>
                 <p className="text-xl font-bold">{t('Manchester City')}</p>
                 <p className="text-lg">{14}</p>
               </div>
-              <div className="flex flex-row-reverse justify-evenly text-mainWhite w-full gap-3 items-center bg-gradient-to-br md:bg-gradient-to-r  from-[#CA0538] to-mainWhite rounded-e p-3">
+              <div className="flex flex-row-reverse justify-evenly text-mainWhite w-full gap-3 items-center bg-gradient-to-bl md:bg-gradient-to-r  from-[#CA0538] to-mainWhite rounded-e p-3">
                 <Image
                   src={Premier}
                   alt="Arsenal Logo"
