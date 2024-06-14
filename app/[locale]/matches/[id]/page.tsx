@@ -82,31 +82,33 @@ const MatchDetails = ({ searchParams }: { searchParams: { search: string } }) =>
             />
             <div className="mt-10">
               <SharedLine header="Ranking" />
-              <div className="container mx-auto mt-4">
+              <div className=" mx-auto mt-4">
                 <table className="table-auto w-full border border-collapse md:font-bold ">
                   <thead>
                     <tr className="bg-mainDark text-sm  md:text-lg text-white lg:text-2xl  p-2 rounded lg:font-bold text-center mb-4">
-                      <th className="px-2 md:px-4">{t('Points')}</th>
-                      <th className="px-2 md:px-4">{t('D')}</th>
-                      <th className="px-2 md:px-4">{t('L')}</th>
-                      <th className="px-2 md:px-4">{t('W')}</th>
-                      <th className="px-2 md:px-4 text-center">{t('Team')}</th>
-                      <th className="px-2 md:px-4">{t('Ranking')}</th>
+                      <th className="px-1 md:px-4 py-2">{t('Points')}</th>
+                      <th className="px-1 md:px-4 py-2">{t('D')}</th>
+                      <th className="px-1 md:px-4 py-2">{t('L')}</th>
+                      <th className="px-1 md:px-4 py-2">{t('W')}</th>
+                      <th className="px-1 md:px-4 py-2 text-center">
+                        {t('Team')}
+                      </th>
+                      <th className="px-1 md:px-4 py-2">{t('Ranking')}</th>
                     </tr>
                   </thead>
                   <tbody>
                     {ranking.map(rank => (
                       <tr key={rank.rank} className="border-b text-center">
-                        <td className="px-4 py-2">{t(rank.rank)}</td>
-                        <td className="px-4 py-2">{t(rank.points)}</td>
-                        <td className="px-4 py-2">{t(rank.d)}</td>
-                        <td className="px-4 py-2">{t(rank.l)}</td>
-                        <td className="px-4 py-2">{t(rank.w)}</td>
-                        <td className="px-4 py-2 flex justify-center items-center gap-2">
+                        <td className="px-1 md:px-4 py-2">{t(rank.rank)}</td>
+                        <td className="px-1 md:px-4 py-2">{t(rank.points)}</td>
+                        <td className="px-1 md:px-4 py-2">{t(rank.d)}</td>
+                        <td className="px-1 md:px-4 py-2">{t(rank.l)}</td>
+                        <td className="px-1 md:px-4 py-2">{t(rank.w)}</td>
+                        <td className="px-1 md:px-4 py-2 flex justify-center text-sm md:text-base items-center gap-2">
                           {t(rank.team.name)}
                           <Image
                             priority={true}
-                            className="h-8 w-8"
+                            className="h-7 w-7 md:h-10 md:w-10"
                             src={rank.team.img}
                             alt={rank.team.name}
                           />
@@ -182,8 +184,8 @@ const MatchDetails = ({ searchParams }: { searchParams: { search: string } }) =>
           <SharedLine header="Stats" />
           <div className="flex flex-col items-center justify-center gap-3">
             <p className="text-mainGray">{t('Premier League')}</p>
-            <div className="flex w-full  px-10">
-              <div className="flex justify-evenly text-mainWhite w-full gap-3 bg-gradient-to-l   from-[#4B4FAC] to-mainWhite rounded-s  items-center p-3">
+            <div className="flex flex-col md:flex-row w-full  px-10">
+              <div className="flex justify-evenly text-mainWhite w-full gap-3  bg-gradient-to-br md:bg-gradient-to-l   from-[#4B4FAC] to-mainWhite rounded-s  items-center p-3">
                 <Image
                   src={Manchester}
                   alt="Manchester City Logo"
@@ -193,7 +195,7 @@ const MatchDetails = ({ searchParams }: { searchParams: { search: string } }) =>
                 <p className="text-xl font-bold">{t('Manchester City')}</p>
                 <p className="text-lg">{14}</p>
               </div>
-              <div className="flex flex-row-reverse justify-evenly text-mainWhite w-full gap-3 items-center bg-gradient-to-r  from-[#CA0538] to-mainWhite rounded-e">
+              <div className="flex flex-row-reverse justify-evenly text-mainWhite w-full gap-3 items-center bg-gradient-to-br md:bg-gradient-to-r  from-[#CA0538] to-mainWhite rounded-e p-3">
                 <Image
                   src={Premier}
                   alt="Arsenal Logo"
@@ -203,7 +205,7 @@ const MatchDetails = ({ searchParams }: { searchParams: { search: string } }) =>
                 <p className="text-xl font-bold">{t('Arsenal')}</p>
                 <p className="text-lg">{2}</p>
               </div>
-            </div>{' '}
+            </div>
           </div>
         </div>
       </main>
