@@ -17,13 +17,13 @@ const Links = ({ data }: any) => {
   const path = pathname.split('/');
   const active = `/${path[path.length - 1]}`;
   return (
-    <div className=" flex  gap-3 lg:gap-10">
+    <div className=" flex text-nowrap gap-3 lg:gap-10">
       {navLinks.map((item: any) => (
         <Link
           key={item.link}
           className={`${
             active === item.link && 'underline-offset-4 underline'
-          } link  text-sm sm:font-normal lg:text-lg hover:underline `}
+          } link  text-xs md:text-sm sm:font-normal lg:text-lg hover:underline `}
           href={item.link}>
           {t(item.name)}
         </Link>

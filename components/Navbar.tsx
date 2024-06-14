@@ -20,9 +20,9 @@ const Navbar = () => {
         <FaBars onClick={toggleSidebar} className="w-5 h-5 md:w-7 md:h-7 " />
         <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
       </div>
-      <div className='flex items-center justify-between w-full p-5'>
+      <div className="flex items-center justify-between w-full p-5">
         <div className="flex gap-4 items-center ">
-          <div className="w-16 h-16 mr-24 md:m-0">
+          <div className="w-16 h-16 ">
             <Logo />
           </div>
           <div className="hidden md:block">
@@ -32,7 +32,9 @@ const Navbar = () => {
         <div className="flex items-center  gap-3 lg:gap-5">
           <Search />
           <div className="flex items-center  gap-2 lg:gap-8">
-            <ThemeSwitch />
+            <div className="">
+              <ThemeSwitch />
+            </div>
             <LanguageChanger />
           </div>
         </div>

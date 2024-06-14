@@ -43,25 +43,25 @@ const SwipeComponent = () => {
               onClick={() => getDay(-1)}
               className={` ${
                 active === -1 ? 'bg-primary text-white' : 'bg-white'
-              } rounded hover:text-white text-sm font-bold`}>
+              } rounded hover:text-white text-base `}>
               {t('Yesterday')}
             </Button>
             <Button
               onClick={() => getDay(0)}
               className={` ${
                 active === 0 ? 'bg-primary text-white' : 'bg-white'
-              } rounded hover:text-white text-sm font-bold`}>
+              } rounded hover:text-white text-base`}>
               {t('Today')}
             </Button>
             <Button
               onClick={() => getDay(1)}
               className={` ${
                 active === 1 ? 'bg-primary text-white' : 'bg-white'
-              } rounded hover:text-white text-sm font-bold`}>
+              } rounded hover:text-white text-base`}>
               {t('Tomorrow')}
             </Button>
           </div>
-          <div className="text-sm text-center text-nowrap md:font-semibold hover:bg-primary/90 bg-primary rounded-t-md flex gap-4 items-center p-2 px-4 text-mainWhite -mb-1">
+          <div className="hidden md:flex text-sm text-center text-nowrap md:font-semibold hover:bg-primary/90 bg-primary rounded-t-md  gap-4 items-center p-2 px-4 text-mainWhite -mb-1">
             <Link href={'/matches'}>
               <p className="text-white m-0 ">{t('All Matches')}</p>
             </Link>
@@ -82,7 +82,7 @@ const SwipeComponent = () => {
         <CarouselContent className="">
           {Array.from({ length: 6 }).map((_, i) => (
             <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/4 p-0">
-              <CarouselItems/>
+              <CarouselItems />
             </CarouselItem>
           ))}
         </CarouselContent>
@@ -97,15 +97,21 @@ const SwipeComponent = () => {
           </>
         ) : (
           <>
-            <CarouselPrevious className="absolute top-1/2 transform -translate-y-1/2 left-0">
+            <CarouselPrevious className="absolute top-1/2 transform -translate-y-1/2 -left-10">
               <IoIosArrowBack />
             </CarouselPrevious>
-            <CarouselNext className="absolute top-1/2 transform -translate-y-1/2 right-0">
+            <CarouselNext className="absolute top-1/2 transform -translate-y-1/2 -right-10">
               <IoIosArrowForward />
             </CarouselNext>
           </>
         )}
       </Carousel>
+      <div className="flex md:hidden gap-4 items-center  text-base justify-center text-center text-nowrap md:font-semibold hover:bg-primary/90 bg-primary rounded-b-md   p-2 px-4 text-mainWhite -mb-1">
+        <Link href={'/matches'}>
+          <p className="text-white text-center m-0 ">{t('All Matches')}</p>
+        </Link>
+        {currentLocale === 'en' ? <IoIosArrowForward /> : <IoIosArrowBack />}
+      </div>
     </div>
   );
 };

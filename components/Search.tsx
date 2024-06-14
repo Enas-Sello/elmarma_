@@ -17,10 +17,8 @@ const Search = () => {
         <FaSearch className=" outline-none ring-0" size={16} />
       </DialogTrigger>
       <DialogContent>
-        <DialogTitle className="text-white ">
-          want to find some thing
-        </DialogTitle>
-        <div className="bg-white  rounded  border oi">
+        <DialogTitle className="text-white ">{t('search')}</DialogTitle>
+        <div className="bg-white  rounded  border">
           <div className="flex justify-between items-center">
             <input
               type="text"

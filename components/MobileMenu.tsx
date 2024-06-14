@@ -4,10 +4,24 @@ import Link from 'next/link';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaBars } from 'react-icons/fa';
-import { Button } from './ui/button';
 import { IoCloseSharp } from 'react-icons/io5';
+import { Button } from './ui/button';
+import SmallDevicesMenu from './SmallDevicesMenu';
+type MenuItem = {
+  link: string;
+  name: string;
+};
 
-const navLinks = [
+export type NavLink = {
+  header: string;
+  menu: MenuItem[];
+};
+export type MenuLink = {
+  name: string;
+  link: string;
+};
+
+const navLinks: NavLink[] = [
   {
     header: 'Arab',
     menu: [
@@ -146,10 +160,10 @@ const navLinks = [
   }
 ];
 
-const menuLinks = [
+const menuLinks: MenuLink[] = [
   { name: 'Matches', link: 'matches' },
   { name: 'News', link: 'news' },
-  { name: 'Leagues', link: 'leagues' },
+  { name: 'Leagues', link: 'Leagues' },
   { name: 'Elmarma media', link: 'media' },
   { name: 'Latest Transfers', link: 'transfers' }
 ];
@@ -171,21 +185,22 @@ export default function Sidebar({
         {isOpen ? (
           <IoCloseSharp
             onClick={toggleSidebar}
-            className="text-white text-4xl"
+            className="w-5 h-5 md:w-10 md:h-10"
           />
         ) : (
           <FaBars onClick={toggleSidebar} className="w-5 h-5 md:w-7 md:h-7 " />
         )}
       </div>
-      <nav className="flex ">
-        <ul className="flex  flex-col gap-8  mt-8  w-full  ">
+      <nav className="flex w-full h-full">
+        <ul className="hidden md:flex  flex-col gap-8  mt-2  ">
           {menuLinks.map(item => (
             <Link key={item.link} onClick={toggleSidebar} href={item.link}>
-              <li
-                className={` text-nowrap px-6 py-3 rounded-md hover:bg-mainDark hover:bg-opacity-50`}>
+              <li className={` text-nowrap md:px-3 lg:px-6 md:py-3`}>
                 <p
                   className={` ${
-                    item.name === 'Leagues' ? 'md:text-emerald-700 text-mainWhite' : ''
+                    item.name === 'Leagues'
+                      ? 'md:text-emerald-700 text-sm lg:text-base text-mainWhite'
+                      : ''
                   } font-medium text-lg text-white mb-3 text-center`}>
                   {t(item.name)}
                 </p>
@@ -194,15 +209,15 @@ export default function Sidebar({
             </Link>
           ))}
         </ul>
-        <ul className="hidden sm:grid grid-cols-4 w-aut gap-5 p-10 bg-mainWhite ">
+        <ul className="hidden md:grid grid-cols-4 gap-5 p-10  bg-mainWhite ">
           {navLinks.map((link, i) => (
             <div key={i}>
-              <div className="text-mainDark  text-lg col-span-1">
+              <div className="text-mainDark col-span-1">
                 <h3 className="font-semibold text-base lg:text-2xl pb-3 border-b-2  mb-3">
                   {t(link.header)}
                 </h3>
                 {link.menu.map((item, i) => (
-                  <Button className="mb-3" variant={'ghost'} key={i}>
+                  <Button className="mb-3 !px-0" variant={'ghost'} key={i}>
                     <Link
                       onClick={toggleSidebar}
                       href={{
@@ -211,7 +226,7 @@ export default function Sidebar({
                           search: item.name
                         }
                       }}
-                      className="hover:bg-primary hover:bg-opacity-20 hover:text-mainDark p-2 rounded text-base lg:text-2xl font-normal lg:font-semibold text-mainGray ">
+                      className="hover:bg-primary mb-5 text-wrap lg:text-nowrap hover:bg-opacity-20 hover:text-mainDark p-2 rounded text-sm  lg:text-2xl font-normal lg:font-semibold text-mainGray  ">
                       {t(item.name)}
                     </Link>
                   </Button>
@@ -221,6 +236,11 @@ export default function Sidebar({
             </div>
           ))}
         </ul>
+        <SmallDevicesMenu
+          menuLinks={menuLinks}
+          navLinks={navLinks}
+          toggleSidebar={toggleSidebar}
+        />
       </nav>
     </div>
   );

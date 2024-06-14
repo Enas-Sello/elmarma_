@@ -15,7 +15,6 @@ import { useTranslation } from 'react-i18next';
 
 const Social = () => {
   const { t } = useTranslation();
-  
   const { data } = useFetch<any>({
     queryKey: [`social`],
     endpoint: 'setting'
