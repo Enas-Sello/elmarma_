@@ -15,14 +15,14 @@ const Navbar = () => {
   const toggleSidebar = () => setIsOpen(!isOpen);
 
   return (
-    <div className="flex items-center gap-2   w-full  h-[3.4rem] bg-mainDark text-white font-medium">
+    <div className="flex items-center gap-2   w-full  h-[4rem] bg-mainDark text-white font-medium">
       <div className=" align-middle bg-primary h-full w-[3rem] flex justify-center items-center">
         <FaBars onClick={toggleSidebar} className="w-5 h-5  " />
         <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
       </div>
       <div className="flex items-center justify-between w-full p-3">
         <div className="flex gap-4 items-center ">
-          <div className="w-12 h-12">
+          <div className="w-14 h-14">
             <Logo />
           </div>
           <div className="hidden sm:block">
