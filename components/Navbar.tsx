@@ -21,7 +21,7 @@ const Navbar = () => {
         <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
       </div>
       <div className="flex items-center justify-between w-full p-3">
-        <div className="flex gap-4 items-center ">
+        <div className="flex gap-12 items-center ">
           <div className="w-14 h-14">
             <Logo />
           </div>
