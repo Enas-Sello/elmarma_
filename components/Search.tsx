@@ -14,7 +14,7 @@ const Search = () => {
   return (
     <Dialog>
       <DialogTrigger>
-        <FaSearch className=" outline-none ring-0" size={16} />
+        <FaSearch className=" outline-none ring-0" size={12}  />
       </DialogTrigger>
       <DialogContent>
         <DialogTitle className="text-white ">{t('search')}</DialogTitle>

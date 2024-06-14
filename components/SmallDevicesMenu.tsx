@@ -10,6 +10,8 @@ import {
 } from '@/components/ui/accordion';
 import { Button } from './ui/button';
 import Social from './Social';
+import ThemeSwitch from './ThemeSwitch';
+import LanguageChanger from './LanguageChanger';
 
 type PropsType = {
   navLinks: NavLink[];
@@ -42,8 +44,12 @@ const SmallDevicesMenu = ({
   };
 
   return (
-    <>
-      <div className="md:hidden w-full p-2 flex flex-col gap-24 ">
+    <div className="md:hidden flex flex-col gap-3 w-full items-end">
+      <div className="flex items-center  gap-2 lg:gap-8 mx-5">
+        <ThemeSwitch />
+        <LanguageChanger />
+      </div>
+      <div className=" w-full p-2 flex flex-col gap-24 ">
         <Accordion defaultValue="item-0" type="single" collapsible>
           {menu.map((section, i) => (
             <AccordionItem key={section.id} value={`item-${i}`}>
@@ -99,9 +105,10 @@ const SmallDevicesMenu = ({
             </AccordionItem>
           ))}
         </Accordion>
+
         <Social />
       </div>
-    </>
+    </div>
   );
 };
 

@@ -39,12 +39,20 @@ export default function LanguageChanger() {
 
   return (
     <div>
-        <select
-        className="bg-mainDark text-white w-fit p-2 rounded outline-none ring-0"
+      <select
+        className="bg-mainDark text-white text-xs  w-fit p-1 rounded outline-none focus:ring-0"
         onChange={handleChange}
         value={currentLocale}>
-        <option className="bg-mainDark text-white" value="en">EN</option>
-        <option className="bg-mainDark text-white" value="ar">AR</option>
+        <option
+          className="outline-none border-none ring-0 bg-mainDark text-white"
+          value="en">
+          EN
+        </option>
+        <option
+          className="outline-none border-none ring-0 bg-mainDark text-white"
+          value="ar">
+          AR
+        </option>
       </select>
     </div>
   );

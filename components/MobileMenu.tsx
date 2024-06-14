@@ -197,11 +197,11 @@ export default function Sidebar({
             <Link key={item.link} onClick={toggleSidebar} href={item.link}>
               <li className={` text-nowrap md:px-3 lg:px-6 md:py-3`}>
                 <p
-                  className={` ${
+                  className={`font-normal text-lg text-white mb-3 text-center ${
                     item.name === 'Leagues'
-                      ? 'md:text-emerald-700 text-sm lg:text-base text-mainWhite'
+                      ? 'text-sm lg:text-base text-mainWhite text-glow font-semibold bg-slate-600 bg-opacity-25 py-2 px-1 mb-0 rounded'
                       : ''
-                  } font-medium text-lg text-white mb-3 text-center`}>
+                  } `}>
                   {t(item.name)}
                 </p>
                 <Separator className="border  border-mainWhite border-opacity-45" />
