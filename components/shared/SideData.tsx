@@ -51,13 +51,21 @@ const SideData = () => {
       <MostRead title={mostReadData.title} items={mostReadData.items} />
       <Advertisements img={addN1} link={'/'} />
       <div>
-        <table className=" table-auto w-full border border-collapse font-bold ">
+        <table className="table-auto w-full border border-collapse md:font-bold ">
           <thead>
             <tr className="bg-[#3D185C]  text-base  text-white lg:text-lg font-normal p-2 rounded xl:font-bold text-center mb-4">
-              <th className="px-4 py-2">{t('NO.')}</th>
-              <th className="px-4 py-2">{t('Name')}</th>
-              <th className="px-4 py-2">{t('Position')}</th>
-              <th className="px-4 py-2">{t('Nationality')}</th>
+              <th className="md:px-4 py-2 text-sm md:text-base text-center">
+                {t('NO.')}
+              </th>
+              <th className="md:px-4 py-2 text-sm md:text-base text-center">
+                {t('Name')}
+              </th>
+              <th className="md:px-4 py-2 text-sm md:text-base text-center">
+                {t('Position')}
+              </th>
+              <th className="md:px-4 py-2 text-sm md:text-base text-center">
+                {t('Nationality')}
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -65,18 +73,20 @@ const SideData = () => {
               <tr
                 key={rank.rank}
                 className="border-b text-center font-medium bg-white shadow">
-                <td className="px-4 py-2">{t(rank.rank)}</td>
-                <td className="px-4 py-2 flex  justify-center items-center gap-2">
+                <td className="md:px-4 py-2 text-sm md:text-base text-center">
+                  {t(rank.rank)}
+                </td>
+                <td className="md:px-4 py-2 text-sm md:text-base text-center  flex  justify-center items-center gap-2">
                   <Image
                     priority={true}
-                    className="h-8 w-8"
+                    className="h-7 w-7 md:h-10 md:w-10"
                     src={rank.team.img}
                     alt={rank.team.name}
                   />
                   {t(rank.team.name)}
                 </td>
-                <td className="px-4 py-2">{t(rank.points)}</td>
-                <td className="px-4 py-2">{t(rank.d)}</td>
+                <td className="md:px-4 py-2 text-sm md:text-base text-center">{t(rank.points)}</td>
+                <td className="md:px-4 py-2 text-sm md:text-base text-center">{t(rank.d)}</td>
               </tr>
             ))}
           </tbody>

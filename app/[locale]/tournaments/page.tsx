@@ -89,15 +89,15 @@ const TournamentsComponent = ({ searchParams }: any) => {
         LineColor="bg-[#3D185C]"
       />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 ">
-        <div className="bg-[#3D185C] text-white p-5 md:h-72 w-[320px] md:w-auto rounded flex flex-col gap-6 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-100 font-semibold">
+        <div className="bg-[#3D185C] text-white p-5 md:h-72 w-[320px] md:w-auto rounded flex flex-col gap-6  font-semibold">
           <p className="text-xl md:text-5xl">{t('Matches')}</p>
           <p className="text-xl md:text-9xl text-end">337</p>
         </div>
-        <div className="bg-[#3D185C] text-white p-5 w-[320px] md:h-72 md:w-auto rounded flex flex-col gap-6 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-100 font-semibold">
+        <div className="bg-[#3D185C] text-white p-5 w-[320px] md:h-72 md:w-auto rounded flex flex-col gap-6  font-semibold">
           <p className="text-xl md:text-4xl">{t('Goals scored')}</p>
           <p className="text-xl md:text-9xl text-end">337</p>
         </div>
-        <div className="bg-[#3D185C] text-white p-5 md:h-72 w-[320px] md:w-auto rounded flex flex-col transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-100 font-semibold">
+        <div className="bg-[#3D185C] text-white p-5 md:h-72 w-[320px] md:w-auto rounded flex flex-col  font-semibold">
           <p className="text-xl md:text-5xl">{t('Assists')}</p>
           <div className="flex items-center justify-between gap-3">
             <p className="text-7xl">12</p>

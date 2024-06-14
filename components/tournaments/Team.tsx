@@ -31,7 +31,7 @@ const Team = () => {
     <MainLayout>
       <main className="">
         <SharedLine header="Team" LineColor="bg-[#3D185C]" />
-        <div className="p-5">md:
+        <div className="p-5">
           <table className=" table-auto w-full border border-collapse font-bold ">
             <thead>
               <tr className="bg-[#3D185C]  md:text-lg text-white lg:text-2xl font-normal p-2 rounded lg:font-bold text-center mb-4">
