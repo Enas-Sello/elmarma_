@@ -163,7 +163,7 @@ const navLinks: NavLink[] = [
 const menuLinks: MenuLink[] = [
   { name: 'Matches', link: 'matches' },
   { name: 'News', link: 'news' },
-  { name: 'Leagues', link: 'Leagues' },
+  { name: 'Leagues', link: 'leagues' },
   { name: 'Elmarma media', link: 'media' },
   { name: 'Latest Transfers', link: 'transfers' }
 ];

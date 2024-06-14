@@ -40,13 +40,13 @@ const NewsDetails = () => {
           />
           <div className="flex justify-between items-center w-full">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 ">
+              <div className="w-10 h-10">
                 <Image
                   priority={true}
                   alt="transfer"
                   src={transfer}
                   placeholder="empty"
-                  className=" object-cover w-full h-full"
+                  className=" object-cover w-full h-full  rounded-xl"
                 />
               </div>
               <p className=" text-sm text-mainGray">
