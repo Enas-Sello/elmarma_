@@ -23,20 +23,17 @@ const Results = () => {
   return (
     <MainLayout>
       <main className="">
-        <div className="grid md:grid-cols-5 gap-10">
-          <div className="col-span-3 flex flex-col gap-5">
+        <div className="grid grid-cols-5 gap-10 ">
+          <div className="col-span-5 md:col-span-3 flex flex-col gap-5">
             <SharedLine header="Results" LineColor="bg-[#3D185C]" />
             {matches.map(item => (
               <>
-                <SharedLine
-                  header={item.team.name}
-                  LineColor="bg-[#3D185C]"
-                />
+                <SharedLine header={item.team.name} LineColor="bg-[#3D185C]" />
                 <LeaguesMatches data={item.match} />
               </>
-            ))}{' '}
+            ))}
           </div>
-          <SideData/>
+          <SideData />
         </div>
       </main>
     </MainLayout>

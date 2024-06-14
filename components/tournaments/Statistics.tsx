@@ -13,7 +13,7 @@ const Statistics = () => {
         <div className="grid grid-cols-5 gap-10 ">
           <div className="col-span-5 md:col-span-3 flex flex-col gap-5">
             <SharedLine header="Statistics" LineColor="bg-[#3D185C]" />
-            <div className="grid grid-cols-2 md:grid-cols-2 gap-4 items-center ">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center ">
               {/* card */}
               <div className="flex flex-col gap-4 shadow bg-white">
                 <p className="p-3 text-center font-medium border-b">

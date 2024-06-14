@@ -35,18 +35,18 @@ const Scorers = () => {
         <div className="p-5">
           <table className=" table-auto w-full border border-collapse font-bold ">
             <thead>
-              <tr className="bg-[#3D185C]  text-lg text-white lg:text-2xl font-normal p-2 rounded lg:font-bold text-center mb-4">
-                <th className="px-4 py-2">{t('NO.')}</th>
-                <th className="px-4 py-2">{t('Name')}</th>
-                <th className="px-4 py-2">{t('Position')}</th>
-                <th className="px-4 py-2">{t('Nationality')}</th>
+              <tr className="bg-[#3D185C]  text-sm  md:text-lg text-white lg:text-2xl font-normal p-2 rounded lg:font-bold text-center mb-4">
+                <th className="px-1 md:px-4 py-2">{t('NO.')}</th>
+                <th className="px-1 md:px-4 py-2">{t('Name')}</th>
+                <th className="px-1 md:px-4 py-2">{t('Position')}</th>
+                <th className="px-1 md:px-4 py-2">{t('Nationality')}</th>
               </tr>
             </thead>
             <tbody>
               {ranking.map(rank => (
                 <tr key={rank.rank} className="border-b text-center">
-                  <td className="px-4 py-2">{t(rank.rank)}</td>
-                  <td className="px-4 py-2 flex justify-center items-center gap-2">
+                  <td className="px-1 md:px-4 py-2">{t(rank.rank)}</td>
+                  <td className="px-1 md:px-4 py-2 flex justify-center items-center gap-2">
                     {t(rank.team.name)}
                     <Image
                       priority={true}
@@ -55,8 +55,8 @@ const Scorers = () => {
                       alt={rank.team.name}
                     />
                   </td>
-                  <td className="px-4 py-2">{t(rank.points)}</td>
-                  <td className="px-4 py-2">{t(rank.d)}</td>
+                  <td className="px-1 md:px-4 py-2">{t(rank.points)}</td>
+                  <td className="px-1 md:px-4 py-2">{t(rank.d)}</td>
                 </tr>
               ))}
             </tbody>

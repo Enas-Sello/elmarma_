@@ -129,7 +129,7 @@ const TournamentsComponent = ({ searchParams }: any) => {
             </div>
           </div>
         </div>
-        <div className="bg-[#3D185C] text-white p-5 md:h-72 w-[320px] md:w-auto rounded flex flex-col transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-100 font-semibold">
+        <div className="bg-[#3D185C] text-white p-5 md:h-72 w-[320px] md:w-auto rounded flex flex-col  font-semibold">
           <p className="text-4xl">{t('Assists')}</p>
           <div className="flex items-center justify-between gap-3">
             <p className="text-7xl">12</p>
