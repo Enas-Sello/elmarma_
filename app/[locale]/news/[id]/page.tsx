@@ -24,7 +24,7 @@ const NewsDetails = () => {
 
   return (
     <MainLayout>
-      <main className="p-10">
+      <main className="p-5 md:p-10">
         <div className=" flex flex-col gap-4 items-center bg-white rounded p-5">
           <h3 className=" font-bold text-lg">
             {t(

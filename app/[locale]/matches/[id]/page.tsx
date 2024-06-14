@@ -46,7 +46,7 @@ const MatchDetails = ({ searchParams }: { searchParams: { search: string } }) =>
   };
   return (
     <MainLayout>
-      <main className="p-10">
+      <main className="p-5 md:p-10">
         <Scoreboard />
         <div className=" w-full bg-white shadow-2xl mt-1 rounded flex justify-center items-center mb-10">
           <Button onClick={() => showMatchDetail('overview')} variant={'link'}>

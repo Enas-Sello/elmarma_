@@ -13,7 +13,7 @@ const News = () => {
   const { t } = useTranslation();
 
   return (
-    <main className="p-10">
+    <main className="p-5 md:p-10">
       <MainLayout>
         <AllTeamsCarousel />
         <SharedLine header="news" />

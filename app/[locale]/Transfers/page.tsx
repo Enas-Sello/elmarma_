@@ -13,7 +13,7 @@ import Link from 'next/link';
 const Transfers = () => {
   const { t } = useTranslation();
   return (
-    <main className="p-10">
+    <main className="p-5 md:p-10">
       <MainLayout>
         <SwipeComponent />
         <AllTeamsCarousel />

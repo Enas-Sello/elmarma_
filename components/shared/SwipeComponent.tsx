@@ -35,7 +35,7 @@ const SwipeComponent = () => {
     document.body.dir = currentLocale === 'ar' ? 'rtl' : 'ltr';
   }, [currentLocale]);
   return (
-    <div className="p-10 ">
+    <div className="p-5 md:p-10">
       <div className="flex justify-center items-center">
         <div className="flex justify-between w-full items-center">
           <div className=" flex justify-center items-center gap-1 align-middle w-full ">

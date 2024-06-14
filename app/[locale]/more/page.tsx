@@ -9,7 +9,7 @@ const Page = ({ searchParams }: { searchParams: { search: string } }) => {
   const data = searchParams.search;
 
   return (
-    <main className=" p-10 ">
+    <main className=" p-5 md:p-10">
       <MainLayout>
         <h2 className=" font-semibold text-lg">header test</h2>
         <Separator className=" border  border-mainGray" />

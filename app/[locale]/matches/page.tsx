@@ -24,7 +24,7 @@ const Matches = async ({
     }
   ];
   return (
-    <main className="p-10">
+    <main className="p-5 md:p-10">
       <MainLayout>
         <div className=" flex flex-col gap-6">
           {/* <div className="flex justify-between">
@@ -32,7 +32,7 @@ const Matches = async ({
           <CalendarForm />
         </div> */}
           <Header />
-          <div className="p-10">
+          <div className="p-5 md:p-10">
             <CalenderCarousel />
           </div>
         </div>

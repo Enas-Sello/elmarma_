@@ -10,7 +10,7 @@ import addN2 from '@/public/assets/add(2).png';
 
 const Media = () => {
   return (
-    <main className=" p-10 ">
+    <main className=" p-5 md:p-10">
       <MainLayout>
         <SwipeComponent />
         <AllTeamsCarousel />

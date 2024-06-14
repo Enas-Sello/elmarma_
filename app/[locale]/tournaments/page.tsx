@@ -41,7 +41,7 @@ const TournamentsComponent = ({ searchParams }: any) => {
   };
 
   return (
-    <main className="p-10 flex flex-col gap-8">
+    <main className="p-5 md:p-10 flex flex-col gap-8">
       <SwipeComponent />
       <div className="relative my-10 rounded bg-[#3D185C]">
         <div className="flex gap-10 items-center p-3 rounded bg-[#3D185C]">

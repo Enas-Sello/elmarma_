@@ -35,7 +35,7 @@ const Home = () => {
   }
 
   return (
-    <main className=" p-10 ">
+    <main className="p-5 md:p-10 ">
       <MainLayout>
         <SwipeComponent />
         <Hero />

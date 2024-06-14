@@ -9,7 +9,7 @@ import addN2 from '@/public/assets/add(2).png';
 const Leagues = async () => {
   const Local = [{}, {}, {}, {}];
   return (
-    <main className="p-10">
+    <main className="p-5 md:p-10">
       <MainLayout>
         {/* <SwipeComponents /> */}
         <>
