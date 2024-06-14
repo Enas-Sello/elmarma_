@@ -82,16 +82,16 @@ const MatchDetails = ({ searchParams }: { searchParams: { search: string } }) =>
             />
             <div className="mt-10">
               <SharedLine header="Ranking" />
-              <div className="container mx-auto mt-4">
+              <div className=" mx-auto mt-4">
                 <table className="table-auto w-full border border-collapse md:font-bold ">
                   <thead>
-                    <tr className="bg-mainDark  md:text-lg text-white lg:text-2xl  p-2 rounded lg:font-bold text-center mb-4">
-                      <th className="px-4 py-2">{t('Points')}</th>
-                      <th className="px-4 py-2">{t('D')}</th>
-                      <th className="px-4 py-2">{t('L')}</th>
-                      <th className="px-4 py-2">{t('W')}</th>
-                      <th className="px-4 py-2 text-center">{t('Team')}</th>
-                      <th className="px-4 py-2">{t('Ranking')}</th>
+                    <tr className="bg-mainDark text-sm  md:text-lg text-white lg:text-2xl  p-2 rounded lg:font-bold text-center mb-4">
+                      <th className="px-2 md:px-4">{t('Points')}</th>
+                      <th className="px-2 md:px-4">{t('D')}</th>
+                      <th className="px-2 md:px-4">{t('L')}</th>
+                      <th className="px-2 md:px-4">{t('W')}</th>
+                      <th className="px-2 md:px-4 text-center">{t('Team')}</th>
+                      <th className="px-2 md:px-4">{t('Ranking')}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -166,13 +166,16 @@ const MatchDetails = ({ searchParams }: { searchParams: { search: string } }) =>
         {/* video */}
         {dataType === 'videos' && (
           <>
-            <Card  data={[
-              { link: 'news' },
-              { link: 'news' },
-              { link: 'news' },
-              { link: 'news' },
-              { link: 'news' }
-            ]} video />
+            <Card
+              data={[
+                { link: 'news' },
+                { link: 'news' },
+                { link: 'news' },
+                { link: 'news' },
+                { link: 'news' }
+              ]}
+              video
+            />
           </>
         )}
         <div className="flex flex-col gap-5 mt-10">

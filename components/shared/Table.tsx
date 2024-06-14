@@ -17,8 +17,8 @@ interface TableProps {
 const Table: React.FC<TableProps> = ({ title, stats, items }) => {
   const { t } = useTranslation();
   return (
-    <div className="container mx-auto mt-4">
-      <h2 className="bg-mainDark  md:text-lg text-white lg:text-2xl font-normal p-2 rounded lg:font-bold text-center mb-4">
+    <div className=" mx-auto mt-4">
+      <h2 className="bg-mainDark text-sm  md:text-lg text-white lg:text-2xl font-normal p-2 rounded lg:font-bold text-center mb-4">
         {t(title)}
       </h2>
       <table className="table-auto w-full border border-collapse md:font-bold">
@@ -29,16 +29,16 @@ const Table: React.FC<TableProps> = ({ title, stats, items }) => {
                 priority={true}
                 src={Manchester}
                 alt="Manchester City"
-                className="h-10 w-10"
+                className="h-7 w-7 md:h-10 md:w-10"
               />
             </th>
-            <th className="px-4 py-2 text-center">{t('Statistics')}</th>
+            <th className="px-4 py-2 text-sm text-center">{t('Statistics')}</th>
             <th className="px-4 py-2">
               <Image
                 priority={true}
                 src={Premier}
                 alt="Manchester City"
-                className="h-10 w-10"
+                className="h-7 w-7 md:h-10 md:w-10"
               />
             </th>
           </tr>
