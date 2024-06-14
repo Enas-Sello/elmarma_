@@ -17,7 +17,7 @@ interface TableProps {
 const Table: React.FC<TableProps> = ({ title, stats, items }) => {
   const { t } = useTranslation();
   return (
-    <div className=" mx-auto mt-4">
+    <div className="container mx-auto mt-4 overflow-hidden">
       <h2 className="bg-mainDark text-sm  md:text-lg text-white lg:text-2xl font-normal p-2 rounded lg:font-bold text-center mb-4">
         {t(title)}
       </h2>

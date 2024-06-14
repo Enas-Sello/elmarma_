@@ -82,7 +82,7 @@ const MatchDetails = ({ searchParams }: { searchParams: { search: string } }) =>
             />
             <div className="mt-10">
               <SharedLine header="Ranking" />
-              <div className=" mx-auto mt-4">
+              <div className="container mx-auto mt-4">
                 <table className="table-auto w-full border border-collapse md:font-bold ">
                   <thead>
                     <tr className="bg-mainDark text-sm  md:text-lg text-white lg:text-2xl  p-2 rounded lg:font-bold text-center mb-4">
